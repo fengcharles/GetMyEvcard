@@ -6,8 +6,8 @@
     <title>服务器时间</title>
 </head> 
 <body>
-	 
-	<fmt:formatDate value="${time}" pattern="yyyy-MM-dd HH:mm:ss"/> 
+
+	<fmt:formatDate value="${time}" pattern="yyyy-MM-dd HH:mm:ss"/>
  
 </body>
 </html>
