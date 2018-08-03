@@ -14,14 +14,14 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value = "forlt")
-public class showController {
+public class ShowController {
 
     @RequestMapping(value = "show")
     public String showbase(HttpServletRequest request, HttpServletResponse response){
 
         String query = request.getParameter("query");
         String region = request.getParameter("region");
-        Integer size = 10;
+        Integer size = 100;
 
         List<Results> list =  new ArrayList<>();
 
