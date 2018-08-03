@@ -31,27 +31,15 @@ public class EvcardService{
     }
 
     public void loadCard(QueryDTO option){
-        doTask(option);
-    }
-
-    public void doTask(QueryDTO option){
-        new Thread(()->{
-            while (true){
-                Boolean flag = exe(option);
-                if (flag == true){
-                    break;
-                }
-                try {
-                    Thread.sleep(option.getQuerySeq());
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
+        EvcardQueryJob evcardQueryJob = new EvcardQueryJob();
+        evcardQueryJob.setQueryDTO(option);
+        Thread thread = new Thread(evcardQueryJob);
+        thread.start();
         QUERYS.add(option);
     }
 
-    public  Boolean  exe(QueryDTO option){
+
+    public static Boolean  exe(QueryDTO option){
 
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("canRent",1);
@@ -83,7 +71,6 @@ public class EvcardService{
                 return true;
             }
         }
-
         return false;
     }
 

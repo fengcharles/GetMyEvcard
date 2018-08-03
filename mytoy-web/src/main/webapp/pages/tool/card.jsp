@@ -10,7 +10,7 @@
     <title>ForT</title>
  <%
     String path = request.getContextPath();
-    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort() +"/" +"30_74_8080"
               +path+"/";
 %>
 </head>
@@ -18,7 +18,7 @@
     <form action="<%=basePath%>card/go"  method="post" >
         <table>
             <tbody>
-            <tr><td><a href="<%=basePath%>card/show">回到首页</a></td></tr>
+            <tr><td><a href="<%=basePath%>card/show">回到首页 </a></td></tr>
 
                 <tr>
                     <td>区域：</td>
@@ -56,7 +56,7 @@
                 <tr>
                     <td>查询时间：</td>
                     <td>
-                        <input type="number" name="queryTime" min="10" value="30"/>
+                        <input type="number" name="queryTime" min="1" value="30"/>
                     </td>
                 </tr>
                 <tr><td><input type="submit" value="提交"></td></tr>
