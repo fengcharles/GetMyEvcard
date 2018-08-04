@@ -39,7 +39,7 @@ public class EvcardService{
     }
 
 
-    public static Boolean  exe(QueryDTO option){
+    public static Boolean exe(QueryDTO option){
 
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("canRent",1);
@@ -52,25 +52,37 @@ public class EvcardService{
         JSONArray jsonArray = json.getJSONArray("dataList");
         logger.info("原始请求结果：{}",json);
         List<Evcards> list = JSONArray.parseArray(jsonArray.toJSONString(), Evcards.class);
-        for (Evcards evcard : list) {
+        StringBuffer sb = new StringBuffer();
+        sb.append("@李斯-银鹏");
+        sb.append("\n");
+        sb.append("查询到了符合的车辆");
+        sb.append("\n");
+        sb.append("=================");
 
+        Boolean stateFlag = false;
+        for (Evcards evcard : list) {
             Integer cardType =  smallList.contains(evcard.getVehicleModelName()) ? 0 : 1;
             Integer soc = Integer.valueOf(evcard.getDrivingRange());
             if (option.getCarType().equals(cardType) && soc >= option.getOil()){
+                stateFlag = true;
                 logger.info("查询到符合的结果：{}",evcard);
-                StringBuffer sb = new StringBuffer();
-                sb.append("查询到了符合的车辆");
                 sb.append("\n");
                 sb.append("车辆名称："+evcard.getVehicleModelName());
                 sb.append("\n");
                 sb.append("车牌号：" + evcard.getVehicleNo());
                 sb.append("\n");
                 sb.append("可行驶距离："+evcard.getDrivingRange());
-                DingTalkMesg.callMe(sb.toString());
-                QUERYS.remove(option);
-                return true;
+                sb.append("\n");
+                sb.append("=================");
             }
         }
+
+        if (stateFlag == true){
+            DingTalkMesg.callMe(sb.toString());
+            QUERYS.remove(option);
+            return  true;
+        }
+
         return false;
     }
 

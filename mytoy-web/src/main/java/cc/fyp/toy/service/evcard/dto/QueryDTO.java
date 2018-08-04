@@ -1,5 +1,6 @@
 package cc.fyp.toy.service.evcard.dto;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -9,6 +10,7 @@ public class QueryDTO {
     private Integer carType;
     private Integer oil;
     private Date startDate;
+    private String strStartDate;
     private Long querySeq;
     private Integer queryTime;
 
@@ -73,6 +75,15 @@ public class QueryDTO {
 
     public void setQueryTime(Integer queryTime) {
         this.queryTime = queryTime;
+    }
+
+    public String getStrStartDate() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return simpleDateFormat.format(this.startDate);
+    }
+
+    public void setStrStartDate(String strStartDate) {
+        this.strStartDate = strStartDate;
     }
 
     @Override

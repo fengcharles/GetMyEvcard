@@ -7,6 +7,48 @@
 
 <html>
 <head>
+    <meta charset="utf-8">
+    <title>ChartTestDemo</title>
+    <script src="../../js/jquery/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        var phoneWidth =  parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+    </script>
+
+    <style>
+        th
+        {
+            text-align:left;
+            font-size: 15px;
+        }
+        .show td
+        {
+            text-align:left;
+            font-size: 30px;
+        }
+        select
+        {
+            width: 180px;
+            height: 40px;
+            font-size: 22px;
+
+        }
+        input{
+            font-size: 27px;
+        }
+    </style>
+
     <title>ForT</title>
  <%
     String path = request.getContextPath();
@@ -16,10 +58,9 @@
 </head>
 <body>
     <form action="<%=basePath%>card/go"  method="post" >
-        <table>
-            <tbody>
-            <tr><td><a href="<%=basePath%>card/show">回到首页 </a></td></tr>
-
+        <table cellpadding="0" cellspacing="0" width="100%" height="50%" style="font-size:30px;">
+            <tbody >
+                <tr><td><a href="<%=basePath%>card/show">回到首页 </a></td></tr>
                 <tr>
                     <td>区域：</td>
                     <td>
@@ -56,32 +97,61 @@
                 <tr>
                     <td>查询时间：</td>
                     <td>
-                        <input type="number" name="queryTime" min="1" value="30"/>
+                        <input type="number" name="queryTime" min="1" value="120"/>
                     </td>
                 </tr>
-                <tr><td><input type="submit" value="提交"></td></tr>
-
-                <c:forEach items="${querys}" var="query">
-                    <tr>
-                        <td>
-                            查询区域：${query.option}
-                        </td>
-                        <td>
-                            查询车型：${query.carType}
-                        </td>
-                        <td>
-                            开始时间：${query.startDate}
-                        </td>
-                        <td>
-                            查询时间：${query.queryTime}分
-                        </td>
-                    </tr>
-                </c:forEach>
+                <tr align="center"><td colspan="2"><input type="submit" style="width: 200px;height: 50px;font-size: 30px" value="提交"></td></tr>
             </tbody>
         </table>
+        <table id="show" cellpadding="0" cellspacing="0" width="90%" height="10%" style="font-size:15px;">
+            <thead>
+                <th>查询区域</th>
+                <th>查询车型</th>
+                <th>开始时间</th>
+                <th>查询时间</th>
+            </thead>
+            <tbody >
+            <c:forEach items="${querys}" var="query">
+                <tr>
+                    <td>
+                        ${query.option}
+                    </td>
+                    <td>
+                        ${query.carType}
+                    </td>
+                    <td>
+                       ${query.strStartDate}
+                    </td>
+                    <td>
+                        ${query.queryTime}分
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+
+
     </form>
     <table>
 
     </table>
 </body>
+
+
+<script type="text/javascript">
+    var phoneWidth =  parseInt(window.screen.width);
+    var phoneScale = phoneWidth/640;
+    var ua = navigator.userAgent;
+    if (/Android (\d+\.\d+)/.test(ua)){
+        var version = parseFloat(RegExp.$1);
+        if(version>2.3){
+            document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+        }else{
+            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+        }
+    } else {
+        document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+    }
+</script>
+
 </html>

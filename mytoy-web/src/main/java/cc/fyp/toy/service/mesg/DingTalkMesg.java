@@ -46,7 +46,7 @@ public class DingTalkMesg {
 
     public static void main(String args[]) throws Exception{
 
-        callMe("haha ");
+        callMe("@李斯-银鹏 wqeqwe ");
 
     }
 
