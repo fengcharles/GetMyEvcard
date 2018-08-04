@@ -1,5 +1,7 @@
 package cc.fyp.toy.service.evcard.dto;
 
+import java.util.Date;
+
 public class Evcards {
 
     private String shopSeq;
@@ -13,9 +15,10 @@ public class Evcards {
     private String oil;
     private String serviceStatus;
     private String canRent;
-    private String drivingRange;
+    private Integer drivingRange;
     private String priceDesc;
     private String nightCarPrice;
+    private Date bugDate;
 
     @Override
     public String toString() {
@@ -34,6 +37,7 @@ public class Evcards {
                 ", drivingRange='" + drivingRange + '\'' +
                 ", priceDesc='" + priceDesc + '\'' +
                 ", nightCarPrice='" + nightCarPrice + '\'' +
+                ", bugDate=" + bugDate +
                 '}';
     }
 
@@ -125,11 +129,11 @@ public class Evcards {
         this.canRent = canRent;
     }
 
-    public String getDrivingRange() {
+    public Integer getDrivingRange() {
         return drivingRange;
     }
 
-    public void setDrivingRange(String drivingRange) {
+    public void setDrivingRange(Integer drivingRange) {
         this.drivingRange = drivingRange;
     }
 
@@ -147,5 +151,13 @@ public class Evcards {
 
     public void setNightCarPrice(String nightCarPrice) {
         this.nightCarPrice = nightCarPrice;
+    }
+
+    public Date getBugDate() {
+        return bugDate;
+    }
+
+    public void setBugDate(Date bugDate) {
+        this.bugDate = bugDate;
     }
 }

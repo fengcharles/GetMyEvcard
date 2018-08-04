@@ -10,7 +10,8 @@ public class EvcardQueryJob implements Runnable {
     public void run() {
 
         while (true && queryDTO.timeOut()){
-            Boolean flag = EvcardService.exe(queryDTO);
+            EvcardService evcardService = new EvcardService();
+            Boolean flag = evcardService.exe(queryDTO);
             if (flag == true){
                 break;
             }
