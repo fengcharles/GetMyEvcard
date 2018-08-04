@@ -1,12 +1,14 @@
 package cc.fyp.toy.controller;
 
 import cc.fyp.toy.service.evcard.EvcardService;
+import cc.fyp.toy.service.evcard.dto.EvcardOrderResp;
 import cc.fyp.toy.service.evcard.dto.QueryDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -36,6 +38,15 @@ public class EvcardController {
         request.setAttribute("flag","启动成功");
         request.setAttribute("querys",EvcardService.QUERYS);
         return "/pages/tool/card";
+    }
+
+    @RequestMapping(value = "order",method = RequestMethod.GET)
+    public String order(HttpServletRequest request,String seq,String vin){
+        logger.info("启动预约功能{}-{}",seq,vin);
+        EvcardOrderResp result =  evcardService.order(seq,vin);
+        request.setAttribute("result","预约结果");
+        request.setAttribute("message",result.getMessage());
+        return "/pages/comm/result";
     }
 
 }

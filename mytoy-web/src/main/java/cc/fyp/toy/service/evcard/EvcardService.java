@@ -1,26 +1,21 @@
 package cc.fyp.toy.service.evcard;
 
 import cc.fyp.toy.controller.EvcardController;
+import cc.fyp.toy.service.evcard.dto.EvcardOrderResp;
 import cc.fyp.toy.service.evcard.dto.Evcards;
 import cc.fyp.toy.service.evcard.dto.QueryDTO;
 import cc.fyp.toy.service.evcard.outapi.EvcardApi;
 import cc.fyp.toy.service.mesg.DingTalkMesg;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 public class EvcardService{
-
-
 
     private final static Logger logger = LoggerFactory.getLogger(EvcardController.class);
 
@@ -85,9 +80,18 @@ public class EvcardService{
             sb.append("vin："+evcard.getVin());
             sb.append("\n");
             sb.append("位置："+evcard.getShopName());
+            sb.append("\n");
+            sb.append("点击链接，即可预约：\n"+"http://test.callback.mogoroom.com/30_74_8090/mytoy/card/order?seq="+evcard.getShopSeq()+"&vin="+evcard.getVin());
+            sb.append("\n");
             sb.append("=================");
         });
         System.out.println(canUseList);
+    }
+
+    public EvcardOrderResp order(String seq,String vin){
+        EvcardApi evcardApi = new EvcardApi();
+        EvcardOrderResp resp =  evcardApi.order(seq,vin);
+        return resp;
     }
 
 }
