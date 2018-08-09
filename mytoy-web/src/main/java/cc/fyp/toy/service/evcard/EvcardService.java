@@ -8,6 +8,8 @@ import cc.fyp.toy.service.evcard.outapi.EvcardApi;
 import cc.fyp.toy.service.mesg.DingTalkMesg;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,14 +21,16 @@ public class EvcardService{
 
     private final static Logger logger = LoggerFactory.getLogger(EvcardController.class);
 
+    @Autowired
+    private TaskExecutor taskExecutor;
+
     public static final List<QueryDTO> QUERYS = new ArrayList<>();
 
     public void loadCard(QueryDTO option){
+        QUERYS.add(option);
         EvcardQueryJob evcardQueryJob = new EvcardQueryJob();
         evcardQueryJob.setQueryDTO(option);
-        Thread thread = new Thread(evcardQueryJob);
-        thread.start();
-        QUERYS.add(option);
+        taskExecutor.execute(evcardQueryJob);
     }
 
 

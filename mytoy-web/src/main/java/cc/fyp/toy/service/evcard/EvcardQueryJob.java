@@ -18,9 +18,10 @@ public class EvcardQueryJob implements Runnable {
             try {
                 Thread.sleep(queryDTO.getQuerySeq());
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                EvcardService.QUERYS.remove(queryDTO);
             }
         }
+        EvcardService.QUERYS.remove(queryDTO);
     }
 
     public QueryDTO getQueryDTO() {

@@ -11,7 +11,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -22,7 +24,9 @@ public class EvcardApi {
     private static final String GETCARD_URL = "https://mas.evcard.vip:8443/evcard-mas/evcardapp?service=";
     private static final String SERVICE_VEHICLEiNFO = "getVehicleInfoList";
     private static final String SERVICE_ORDERVEHICLE = "orderVehicle";
+    private static final String SERVICE_GETORDERLIST = "getOrderList";
     public static  final String USERID = "13052375352234201563";
+    public static final String TOKEN = "dc000205-6ed5-44d3-8deb-5a3ef5442722";
 
     public static final List<String> smallList = new ArrayList<>();
     static {
@@ -41,7 +45,7 @@ public class EvcardApi {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("canRent",1);
         jsonObject.put("shopSeq",option.getOption());
-        jsonObject.put("token","9bedfbf3-b785-4036-8936-835ab1441da7");
+        jsonObject.put("token",TOKEN);
         jsonObject.put("vehicleModelSeq","");
 
         String result = HttpClientUtil.postJson(GETCARD_URL + SERVICE_VEHICLEiNFO,jsonObject.toString());
@@ -66,7 +70,7 @@ public class EvcardApi {
         jsonObject.put("isInsurance","1");
         jsonObject.put("planpickupstoreseq",seq);
         jsonObject.put("vin",vin);
-        jsonObject.put("token","44e2d031-0e74-440a-83d2-6756a2eeb02b");
+        jsonObject.put("token",TOKEN);
         jsonObject.put("authId",USERID);
 
         String result = HttpClientUtil.postJson(GETCARD_URL + SERVICE_ORDERVEHICLE,jsonObject.toString());
@@ -75,4 +79,23 @@ public class EvcardApi {
         return  resp;
     }
 
+
+    /**
+     * 订单列表
+     * @return
+     */
+    public  String orderList(){
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss000");
+        String updateTime = simpleDateFormat.format(new Date());
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("token",TOKEN);
+        jsonObject.put("authId",USERID);
+        jsonObject.put("updatedTime",updateTime);
+
+        String result = HttpClientUtil.postJson(GETCARD_URL + SERVICE_GETORDERLIST,jsonObject.toString());
+        logger.info("原始请求结果：{}",result);
+        return result;
+    }
 }

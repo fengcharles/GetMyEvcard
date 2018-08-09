@@ -85,7 +85,7 @@
                 <tr>
                     <td>电量大于：</td>
                     <td>
-                        <input type="number" name="oil" min="40" value="40"/>
+                        <input type="number" name="oil" min="1" value="40"/>
                     </td>
                 </tr>
                 <tr>
