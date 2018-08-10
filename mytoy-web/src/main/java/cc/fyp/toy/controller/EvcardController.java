@@ -1,6 +1,7 @@
 package cc.fyp.toy.controller;
 
 import cc.fyp.toy.service.evcard.EvcardService;
+import cc.fyp.toy.service.evcard.dto.EvcardComm;
 import cc.fyp.toy.service.evcard.dto.EvcardOrderResp;
 import cc.fyp.toy.service.evcard.dto.QueryDTO;
 import cc.fyp.toy.service.evcard.outapi.EvcardApi;
@@ -44,7 +45,7 @@ public class EvcardController {
     @RequestMapping(value = "order",method = RequestMethod.GET)
     public String order(HttpServletRequest request,String seq,String vin){
         logger.info("启动预约功能{}-{}",seq,vin);
-        EvcardOrderResp result =  evcardService.order(seq,vin);
+        EvcardComm result =  evcardService.order(seq,vin);
         request.setAttribute("result","预约结果");
         request.setAttribute("message",result.getMessage());
         return "/pages/comm/result";

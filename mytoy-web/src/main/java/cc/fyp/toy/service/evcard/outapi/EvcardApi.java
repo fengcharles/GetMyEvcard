@@ -65,7 +65,7 @@ public class EvcardApi {
      * @param vin 汽车vin码
      * @return
      */
-    public  EvcardOrderResp order(String seq,String vin){
+    public  EvcardComm order(String seq,String vin){
 
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("origin","evcardios");
@@ -79,9 +79,7 @@ public class EvcardApi {
 
         logger.info("原始请求结果：{}",result);
         EvcardComm resp =  JSONObject.parseObject(result,EvcardComm.class);
-        EvcardOrderResp xx = resp.loadData(EvcardOrderResp.class);
-
-        return  xx;
+        return  resp;
     }
 
 

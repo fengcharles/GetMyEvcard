@@ -1,6 +1,7 @@
 package cc.fyp.toy.service.evcard;
 
 import cc.fyp.toy.controller.EvcardController;
+import cc.fyp.toy.service.evcard.dto.EvcardComm;
 import cc.fyp.toy.service.evcard.dto.EvcardOrderResp;
 import cc.fyp.toy.service.evcard.dto.Evcards;
 import cc.fyp.toy.service.evcard.dto.QueryDTO;
@@ -85,16 +86,16 @@ public class EvcardService{
             sb.append("\n");
             sb.append("位置："+evcard.getShopName());
             sb.append("\n");
-            sb.append("点击链接，即可预约：\n"+"http://test.callback.mogoroom.com/30_74_8090/mytoy/card/order?seq="+evcard.getShopSeq()+"&vin="+evcard.getVin());
+            sb.append("点击链接，即可预约：\n"+"http://test.callback.mogoroom.com/30_74_8080/mytoy/card/order?seq="+evcard.getShopSeq()+"&vin="+evcard.getVin());
             sb.append("\n");
             sb.append("=================");
         });
         System.out.println(canUseList);
     }
 
-    public EvcardOrderResp order(String seq,String vin){
+    public EvcardComm order(String seq,String vin){
         EvcardApi evcardApi = new EvcardApi();
-        EvcardOrderResp resp =  evcardApi.order(seq,vin);
+        EvcardComm resp =  evcardApi.order(seq,vin);
         return resp;
     }
 
