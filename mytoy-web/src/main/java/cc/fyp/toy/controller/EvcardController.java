@@ -3,6 +3,7 @@ package cc.fyp.toy.controller;
 import cc.fyp.toy.service.evcard.EvcardService;
 import cc.fyp.toy.service.evcard.dto.EvcardOrderResp;
 import cc.fyp.toy.service.evcard.dto.QueryDTO;
+import cc.fyp.toy.service.evcard.outapi.EvcardApi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,17 @@ public class EvcardController {
         EvcardOrderResp result =  evcardService.order(seq,vin);
         request.setAttribute("result","预约结果");
         request.setAttribute("message",result.getMessage());
+        return "/pages/comm/result";
+    }
+
+
+    @RequestMapping(value = "login",method = RequestMethod.GET)
+    public String login(HttpServletRequest request){
+        logger.info("启动登录......");
+        EvcardApi api = new EvcardApi();
+        String token = api.login();
+        request.setAttribute("result","登录结果");
+        request.setAttribute("message",token);
         return "/pages/comm/result";
     }
 
