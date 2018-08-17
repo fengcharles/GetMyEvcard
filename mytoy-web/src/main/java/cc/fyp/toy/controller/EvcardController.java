@@ -8,6 +8,7 @@ import cc.fyp.toy.service.evcard.outapi.EvcardApi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,7 +30,7 @@ public class EvcardController {
     public String showbase(HttpServletRequest request, HttpServletResponse response){
 
         request.setAttribute("querys",EvcardService.QUERYS);
-        return "/pages/tool/card";
+        return "/tool/card";
     }
 
     @RequestMapping(value = "go")
@@ -39,7 +40,7 @@ public class EvcardController {
         evcardService.loadCard(queryDTO);
         request.setAttribute("flag","启动成功");
         request.setAttribute("querys",EvcardService.QUERYS);
-        return "/pages/tool/card";
+        return "/tool/card";
     }
 
     @RequestMapping(value = "order",method = RequestMethod.GET)
@@ -48,7 +49,7 @@ public class EvcardController {
         EvcardComm result =  evcardService.order(seq,vin);
         request.setAttribute("result","预约结果");
         request.setAttribute("message",result.getMessage());
-        return "/pages/comm/result";
+        return "/comm/result";
     }
 
 
@@ -59,7 +60,7 @@ public class EvcardController {
         String token = api.login();
         request.setAttribute("result","登录结果");
         request.setAttribute("message",token);
-        return "/pages/comm/result";
+        return "/comm/result";
     }
 
 }
