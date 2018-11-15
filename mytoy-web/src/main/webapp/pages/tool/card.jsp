@@ -52,7 +52,7 @@
     <title>ForT</title>
  <%
     String path = request.getContextPath();
-    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort() +"/" +"40_65_8090"
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort() +"/" //+"40_65_8090"
               +path+"/";
 %>
 </head>

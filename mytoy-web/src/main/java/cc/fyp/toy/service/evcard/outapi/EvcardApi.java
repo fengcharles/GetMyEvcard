@@ -1,19 +1,19 @@
 package cc.fyp.toy.service.evcard.outapi;
 
 import cc.fyp.toy.controller.EvcardController;
-import cc.fyp.toy.service.evcard.dto.EvcardComm;
-import cc.fyp.toy.service.evcard.dto.EvcardOrderResp;
-import cc.fyp.toy.service.evcard.dto.Evcards;
-import cc.fyp.toy.service.evcard.dto.QueryDTO;
+import cc.fyp.toy.service.evcard.dto.*;
 import cc.fyp.toy.util.HttpClientUtil;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import okhttp3.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -37,27 +37,34 @@ public class EvcardApi {
         smallList.add("奇瑞eq1（小蚂蚁）");
     }
 
+
     /**
      * 从某个停车点获取符合条件的车辆
-     * @param option
      * @return
      */
-    public  List<Evcards> queryCard(QueryDTO option){
-
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("canRent",1);
-        jsonObject.put("shopSeq",option.getOption());
-        jsonObject.put("token",TOKEN);
-        jsonObject.put("vehicleModelSeq","");
-
-        String result = HttpClientUtil.postJson(GETCARD_URL + SERVICE_VEHICLEiNFO,jsonObject.toString());
-        JSONObject json =  JSONObject.parseObject(result);
-        JSONArray jsonArray = json.getJSONArray("dataList");
-        logger.info("原始请求结果：{}",json);
-        List<Evcards> list = JSONArray.parseArray(jsonArray.toJSONString(), Evcards.class);
-        return  list;
+    public JSONObject getVehicleInfoList(String param,EvcardHeader header){
+        JSONObject json = this.callEvcard(header,param,SERVICE_VEHICLEiNFO);
+        return json;
     }
 
+    /**
+     * 从某个停车点获取符合条件的车辆
+     * @return
+     */
+    public List<Evcards> findCards(QueryCardReqst param,EvcardHeader header){
+
+        try {
+            JSONObject strParam = (JSONObject) JSONObject.toJSON(param);
+            JSONObject json = this.callEvcard(header,strParam.toString(),SERVICE_VEHICLEiNFO);
+            JSONArray jsonArray = json.getJSONArray("dataList");
+            logger.info("原始请求结果：{}",json);
+            List<Evcards> list = JSONArray.parseArray(jsonArray.toJSONString(), Evcards.class);
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Collections.emptyList();
+    }
 
     /**
      * 预约
@@ -65,7 +72,7 @@ public class EvcardApi {
      * @param vin 汽车vin码
      * @return
      */
-    public  EvcardComm order(String seq,String vin){
+    public  EvcardComm order(EvcardHeader header,String seq,String vin){
 
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("origin","evcardios");
@@ -75,10 +82,9 @@ public class EvcardApi {
         jsonObject.put("token",this.login());
         jsonObject.put("authId",USERID);
 
-        String result = HttpClientUtil.postJson(GETCARD_URL + SERVICE_ORDERVEHICLE,jsonObject.toString());
-
+        JSONObject result = this.callEvcard(header,jsonObject.toString(),SERVICE_ORDERVEHICLE);
         logger.info("原始请求结果：{}",result);
-        EvcardComm resp =  JSONObject.parseObject(result,EvcardComm.class);
+        EvcardComm resp =  result.toJavaObject(EvcardComm.class);
         return  resp;
     }
 
@@ -124,5 +130,30 @@ public class EvcardApi {
 
         return evcardComm.getToken();
 
+    }
+
+    private JSONObject callEvcard(EvcardHeader header,String param,String service){
+
+        try {
+            OkHttpClient client = new OkHttpClient();
+            MediaType mediaType = MediaType.parse("application/octet-stream");
+            RequestBody body = RequestBody.create(mediaType,param);
+            Request request = new Request.Builder()
+                    .url(GETCARD_URL + service)
+                    .post(body)
+                    .addHeader("TimeStamp", header.getTimeStamp())
+                    .addHeader("appkey", header.getAppkey())
+                    .addHeader("random", header.getRandom())
+                    .addHeader("sign", header.getSign())
+                    .addHeader("token", header.getToken())
+                    .build();
+
+            Response response = client.newCall(request).execute();
+            JSONObject jsonObject = JSONObject.parseObject(response.body().string());
+            return jsonObject;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
