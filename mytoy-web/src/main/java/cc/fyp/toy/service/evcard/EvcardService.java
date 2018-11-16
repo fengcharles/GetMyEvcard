@@ -21,7 +21,7 @@ public class EvcardService{
 
     private final static Logger logger = LoggerFactory.getLogger(EvcardController.class);
 
-    public  static final String  REQ_HOST = "http://test.callback.mogoroom.com/30_74_8080";
+    public  static final String  REQ_HOST = "http://test.callback.mogoroom.com/40_65_8085";
 
     @Autowired
     private TaskExecutor taskExecutor;

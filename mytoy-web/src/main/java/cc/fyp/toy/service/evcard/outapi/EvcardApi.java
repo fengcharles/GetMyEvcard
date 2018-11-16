@@ -79,7 +79,7 @@ public class EvcardApi {
         jsonObject.put("isInsurance","1");
         jsonObject.put("planpickupstoreseq",seq);
         jsonObject.put("vin",vin);
-        jsonObject.put("token",this.login());
+        jsonObject.put("token",header.getToken());
         jsonObject.put("authId",USERID);
 
         JSONObject result = this.callEvcard(header,jsonObject.toString(),SERVICE_ORDERVEHICLE);
@@ -93,19 +93,19 @@ public class EvcardApi {
      * 订单列表
      * @return
      */
-    public  EvcardComm orderList(){
+    public  EvcardComm orderList(EvcardHeader header){
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss000");
         String updateTime = simpleDateFormat.format(new Date());
 
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("token",TOKEN);
+        jsonObject.put("token",header.getToken());
         jsonObject.put("authId",USERID);
         jsonObject.put("updatedTime",updateTime);
 
-        String result = HttpClientUtil.postJson(GETCARD_URL + SERVICE_GETORDERLIST,jsonObject.toString());
+        JSONObject result = this.callEvcard(header,jsonObject.toJSONString(),SERVICE_GETORDERLIST);
         logger.info("原始请求结果：{}",result);
-        EvcardComm evcardComm = JSONObject.parseObject(result,EvcardComm.class);
+        EvcardComm evcardComm = result.toJavaObject(EvcardComm.class);
         return evcardComm;
     }
 
@@ -113,7 +113,7 @@ public class EvcardApi {
      * 登录
      * @return
      */
-    public String login(){
+    public String login(EvcardHeader header){
 
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("password","qwe123qwe");
@@ -124,9 +124,9 @@ public class EvcardApi {
         jsonObject.put("appType","1");
         jsonObject.put("loginOrigin","0");
 
-        String result = HttpClientUtil.postJson(GETCARD_URL + SERVICE_LOGIN,jsonObject.toString());
+        JSONObject result = this.callEvcard(header,jsonObject.toString(),SERVICE_LOGIN);
         logger.info("原始请求结果：{}",result);
-        EvcardComm evcardComm = JSONObject.parseObject(result,EvcardComm.class);
+        EvcardComm evcardComm =  result.toJavaObject(EvcardComm.class);
 
         return evcardComm.getToken();
 

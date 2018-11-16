@@ -13,7 +13,7 @@
 	<artifactId>mytoy</artifactId>
 	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>toy-web</name>
+	<name>mytoy-web</name>
 
 	<dependencies>
 
@@ -30,21 +30,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-
-            <!-- 这个是剔除掉自带的 tomcat部署的-->
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </exclusion>
-            </exclusions>
-
         </dependency>
-        <!-- tomcat容器部署 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
-            <!--<scope>compile</scope>-->
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
@@ -63,8 +53,14 @@
             <optional>true</optional>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -128,20 +124,22 @@
 
 	<build>
 		<finalName>mytoy</finalName>
-		<resources>
-			<!-- 先指定 src/main/resources下所有文件及文件夹为资源文件 -->
-			<resource>
-				<directory>src/main/resources/</directory>
-				<filtering>false</filtering>
-			</resource>
+        <resources>
             <resource>
-                <directory>src/main/webapp/</directory>
+                <directory>${basedir}/src/main/webapp</directory>
                 <targetPath>META-INF/resources</targetPath>
                 <includes>
                     <include>**/**</include>
                 </includes>
             </resource>
-		</resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

@@ -2,13 +2,11 @@ package cc.fyp.toy.controller;
 
 import cc.fyp.toy.service.evcard.EvcardService;
 import cc.fyp.toy.service.evcard.dto.EvcardComm;
-import cc.fyp.toy.service.evcard.dto.EvcardOrderResp;
 import cc.fyp.toy.service.evcard.dto.QueryDTO;
 import cc.fyp.toy.service.evcard.outapi.EvcardApi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,11 +24,12 @@ public class EvcardController {
     @Autowired
     private EvcardService evcardService;
 
+
     @RequestMapping(value = "show")
     public String showbase(HttpServletRequest request, HttpServletResponse response){
-
+        logger.info("请求show");
         request.setAttribute("querys",EvcardService.QUERYS);
-        return "/tool/card";
+        return "tool/card";
     }
 
     @RequestMapping(value = "go")
@@ -40,7 +39,7 @@ public class EvcardController {
         evcardService.loadCard(queryDTO);
         request.setAttribute("flag","启动成功");
         request.setAttribute("querys",EvcardService.QUERYS);
-        return "/tool/card";
+        return "tool/card";
     }
 
     @RequestMapping(value = "order",method = RequestMethod.GET)
@@ -49,7 +48,7 @@ public class EvcardController {
         EvcardComm result =  evcardService.order(seq,vin);
         request.setAttribute("result","预约结果");
         request.setAttribute("message",result.getMessage());
-        return "/comm/result";
+        return "comm/result";
     }
 
 
@@ -57,10 +56,10 @@ public class EvcardController {
     public String login(HttpServletRequest request){
         logger.info("启动登录......");
         EvcardApi api = new EvcardApi();
-        String token = api.login();
+        String token = api.login(evcardService.getHeader());
         request.setAttribute("result","登录结果");
         request.setAttribute("message",token);
-        return "/comm/result";
+        return "comm/result";
     }
 
 }
