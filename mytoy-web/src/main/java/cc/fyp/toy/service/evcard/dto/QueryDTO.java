@@ -1,18 +1,23 @@
 package cc.fyp.toy.service.evcard.dto;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class QueryDTO {
 
-    private String option;
-    private Integer carType;
+    private List<Integer> areas;
+    private List<String> types;
     private Integer oil;
     private Date startDate;
     private String strStartDate;
     private Long querySeq;
+    private String seqName;
     private Integer queryTime;
+    private Integer option;
+    private String host;
 
 
     public Boolean timeOut(){
@@ -29,6 +34,14 @@ public class QueryDTO {
 
     }
 
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
     public Date getStartDate() {
         return startDate;
     }
@@ -37,20 +50,20 @@ public class QueryDTO {
         this.startDate = startDate;
     }
 
-    public String getOption() {
-        return option;
+    public List<Integer> getAreas() {
+        return areas;
     }
 
-    public void setOption(String option) {
-        this.option = option;
+    public void setAreas(List<Integer> areas) {
+        this.areas = areas;
     }
 
-    public Integer getCarType() {
-        return carType;
+    public List<String> getTypes() {
+        return types;
     }
 
-    public void setCarType(Integer carType) {
-        this.carType = carType;
+    public void setTypes(List<String> types) {
+        this.types = types;
     }
 
     public Integer getOil() {
@@ -86,15 +99,33 @@ public class QueryDTO {
         this.strStartDate = strStartDate;
     }
 
+    public Integer getOption() {
+        return option;
+    }
+
+    public void setOption(Integer option) {
+        this.option = option;
+    }
+
+    public String getSeqName() {
+        return seqName;
+    }
+
+    public void setSeqName(String seqName) {
+        this.seqName = seqName;
+    }
+
     @Override
     public String toString() {
         return "QueryDTO{" +
-                "option='" + option + '\'' +
-                ", carType=" + carType +
+                "areas=" + areas +
+                ", types=" + types +
                 ", oil=" + oil +
                 ", startDate=" + startDate +
+                ", strStartDate='" + strStartDate + '\'' +
                 ", querySeq=" + querySeq +
                 ", queryTime=" + queryTime +
+                ", option=" + option +
                 '}';
     }
 }

@@ -4,10 +4,12 @@ import cc.fyp.toy.controller.EvcardController;
 import cc.fyp.toy.service.evcard.dto.*;
 import cc.fyp.toy.service.evcard.outapi.EvcardApi;
 import cc.fyp.toy.service.mesg.DingTalkMesg;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.stereotype.Service;
 
@@ -21,18 +23,36 @@ public class EvcardService{
 
     private final static Logger logger = LoggerFactory.getLogger(EvcardController.class);
 
-    public  static final String  REQ_HOST = "http://test.callback.mogoroom.com/40_65_8085";
-
     @Autowired
     private TaskExecutor taskExecutor;
+
+    @Value("${card.reqHost}")
+    private String reqHost;
+
+    @Value("${card.arae}")
+    private String options;
 
     public static final List<QueryDTO> QUERYS = new ArrayList<>();
 
     public void loadCard(QueryDTO option){
-        QUERYS.add(option);
-        EvcardQueryJob evcardQueryJob = new EvcardQueryJob();
-        evcardQueryJob.setQueryDTO(option);
-        taskExecutor.execute(evcardQueryJob);
+
+        List<AreaResq> areaResqList =  JSONArray.parseArray(options,AreaResq.class);
+        option.getAreas().forEach(ap->{
+            QueryDTO query = new QueryDTO();
+            query.setOption(ap);
+            query.setTypes(option.getTypes());
+            query.setStartDate(option.getStartDate());
+            query.setQueryTime(option.getQueryTime());
+            query.setOil(option.getOil());
+            query.setQuerySeq(option.getQuerySeq());
+            String name = areaResqList.stream().filter(a -> a.getId().equals(ap)).map(AreaResq::getName).findFirst().get();
+            query.setSeqName(name);
+            query.setHost(reqHost);
+            EvcardQueryJob evcardQueryJob = new EvcardQueryJob();
+            evcardQueryJob.setQueryDTO(query);
+            taskExecutor.execute(evcardQueryJob);
+            QUERYS.add(query);
+        });
     }
 
 
@@ -41,7 +61,7 @@ public class EvcardService{
      * @param option
      * @return
      */
-    public  Boolean exe(QueryDTO option){
+    public  Boolean findUseCar(QueryDTO option){
         EvcardApi evcardApi = new EvcardApi();
         QueryCardReqst reqst = new QueryCardReqst();
         reqst.setCanRent("1");
@@ -57,9 +77,9 @@ public class EvcardService{
 
         List<Evcards> canUseList = new ArrayList<>();
         for (Evcards evcard : list) {
-            Integer cardType = EvcardApi.smallList.contains(evcard.getVehicleModelName()) ? 0 : 1;
+            Boolean flag = option.getTypes().contains(evcard.getVehicleModelName());
             Integer soc = Integer.valueOf(evcard.getDrivingRange());
-            if (option.getCarType().equals(cardType) && soc >= option.getOil()){
+            if ( flag && soc >= option.getOil()){
                 canUseList.add(evcard);
                 logger.info("查询到符合的结果：{}",evcard);
             }
@@ -68,14 +88,14 @@ public class EvcardService{
         if (canUseList.size()==0){
             return false;
         }
-        this.sortCardList(canUseList,sb);
+        this.sortCardList(canUseList,sb,option);
         DingTalkMesg.callMe(sb.toString());
         QUERYS.remove(option);
         return  true;
     }
 
 
-    private  void sortCardList(List<Evcards> canUseList,StringBuffer sb){
+    private  void sortCardList(List<Evcards> canUseList,StringBuffer sb,QueryDTO option){
         canUseList = canUseList.stream()
                 .sorted((o,n) -> n.getDrivingRange().compareTo(o.getDrivingRange())).collect(Collectors.toList());
 
@@ -91,7 +111,7 @@ public class EvcardService{
             sb.append("\n");
             sb.append("位置："+evcard.getShopName());
             sb.append("\n");
-            sb.append("点击链接，即可预约：\n"+  REQ_HOST + "/mytoy/card/order?seq="+evcard.getShopSeq()+"&vin="+evcard.getVin());
+            sb.append("点击链接，即可预约：\n"+  option.getHost() + "/mytoy/card/order?seq="+evcard.getShopSeq()+"&vin="+evcard.getVin());
             sb.append("\n");
             sb.append("=================");
         });

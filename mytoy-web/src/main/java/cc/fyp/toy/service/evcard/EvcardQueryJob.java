@@ -11,7 +11,7 @@ public class EvcardQueryJob implements Runnable {
 
         while (true && queryDTO.timeOut()){
             EvcardService evcardService = new EvcardService();
-            Boolean flag = evcardService.exe(queryDTO);
+            Boolean flag = evcardService.findUseCar(queryDTO);
             if (flag == true){
                 break;
             }

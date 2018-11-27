@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" />
-<html>
+
+<html xmlns:th="http://www.thymeleaf.org"  >
 <head>
     <meta charset="utf-8"/>
     <title>ChartTestDemo</title>
@@ -55,22 +55,13 @@
                 <tr>
                     <td>区域：</td>
                     <td>
-                        <select name="option" id="se">
-                            <option value="1418">兴天园</option>
-                            <option value="308">静安体育中心</option>
-                            <option selected="selected" value="203">中信富泰广场</option>
-                            <option value="6254">同心路医院</option>
-                            <option value="10849">花园路</option>
-                        </select>
+                        <input type="checkbox" th:each="option:${options}" th:value="${option.id}" th:text="${option.name}" th:name="areas" />
                     </td>
                 </tr>
                 <tr>
                     <td>车型：</td>
                     <td>
-                        <select name="carType" id="carType">
-                            <option value="0">小车</option>
-                            <option value="1">大车</option>
-                        </select>
+                        <input type="checkbox" th:each="type:${cardType}" th:value="${type}" th:text="${type}"  th:name="types" />
                     </td>
                 </tr>
                 <tr>
@@ -96,17 +87,19 @@
         </table>
         <table id="show" cellpadding="0" cellspacing="0" width="90%" height="10%" style="font-size:15px;">
             <thead>
-                <th>查询区域</th>
-                <th>查询车型</th>
+                <th>区域</th>
+                <th>车型</th>
                 <th>开始时间</th>
                 <th>查询时间</th>
+                <th>操作</th>
             </thead>
             <tbody >
                 <tr th:each="query:${querys}">
-                    <td th:text="${query.option}"></td>
-                    <td th:text="${query.carType}"></td>
+                    <td th:text="${query.seqName}"></td>
+                    <td th:text="${query.types}"></td>
                     <td th:text="${query.strStartDate}"></td>
                     <td th:text="${query.queryTime}"></td>
+                    <td> <input type="button" value="取消" /></td>
                 </tr>
             </tbody>
         </table>
