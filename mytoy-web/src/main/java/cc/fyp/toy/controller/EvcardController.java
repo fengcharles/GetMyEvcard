@@ -41,7 +41,7 @@ public class EvcardController {
         request.setAttribute("cardType", Arrays.asList(cardTyp.split(",")));
         List<AreaResq> areaResqList =  JSONArray.parseArray(options,AreaResq.class);
         request.setAttribute("options",areaResqList);
-        return "tool/card";
+        return "tool/carbt";
     }
 
     @RequestMapping(value = "go")
@@ -54,8 +54,18 @@ public class EvcardController {
         request.setAttribute("cardType", Arrays.asList(cardTyp.split(",")));
         List<AreaResq> areaResqList =  JSONArray.parseArray(options,AreaResq.class);
         request.setAttribute("options",areaResqList);
-        return "tool/card";
+        return "tool/process";
     }
+
+    @RequestMapping(value = "process")
+    public String process(HttpServletRequest request,QueryDTO queryDTO){
+        request.setAttribute("querys",EvcardService.QUERYS);
+        request.setAttribute("cardType", Arrays.asList(cardTyp.split(",")));
+        List<AreaResq> areaResqList =  JSONArray.parseArray(options,AreaResq.class);
+        request.setAttribute("options",areaResqList);
+        return "tool/process";
+    }
+
 
     @RequestMapping(value = "order",method = RequestMethod.GET)
     public String order(HttpServletRequest request,String seq,String vin){
