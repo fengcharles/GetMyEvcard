@@ -4,9 +4,9 @@ import cc.fyp.toy.service.evcard.EvcardService;
 import cc.fyp.toy.service.evcard.dto.AreaResq;
 import cc.fyp.toy.service.evcard.dto.EvcardComm;
 import cc.fyp.toy.service.evcard.dto.QueryDTO;
+import cc.fyp.toy.service.evcard.dto.QueryTask;
 import cc.fyp.toy.service.evcard.outapi.EvcardApi;
 import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,11 +45,11 @@ public class EvcardController {
     }
 
     @RequestMapping(value = "go")
-    public String go(HttpServletRequest request,QueryDTO queryDTO){
-        logger.info("启动{}查询",queryDTO);
-        queryDTO.setStartDate(new Date());
-        evcardService.loadCard(queryDTO);
-        request.setAttribute("querys",EvcardService.QUERYS);
+    public String go(HttpServletRequest request, QueryDTO queryParam){
+        logger.info("启动{}查询",queryParam);
+        queryParam.setStartDate(new Date());
+        evcardService.loadCard(queryParam);
+        request.setAttribute("queryTasks",EvcardService.QUERYS);
         request.setAttribute("flag","启动成功");
         request.setAttribute("cardType", Arrays.asList(cardTyp.split(",")));
         List<AreaResq> areaResqList =  JSONArray.parseArray(options,AreaResq.class);
@@ -58,8 +58,22 @@ public class EvcardController {
     }
 
     @RequestMapping(value = "process")
-    public String process(HttpServletRequest request,QueryDTO queryDTO){
-        request.setAttribute("querys",EvcardService.QUERYS);
+    public String process(HttpServletRequest request, QueryTask queryDTO){
+        request.setAttribute("queryTasks",EvcardService.QUERYS);
+        request.setAttribute("cardType", Arrays.asList(cardTyp.split(",")));
+        List<AreaResq> areaResqList =  JSONArray.parseArray(options,AreaResq.class);
+        request.setAttribute("options",areaResqList);
+        return "tool/process";
+    }
+
+
+    @RequestMapping(value = "cancel")
+    public String cancel(HttpServletRequest request,Long taskId){
+
+        QueryTask queryDTO = EvcardService.QUERYS.stream().filter(qt -> qt.getTaskId().equals(taskId)).findFirst().get();
+        queryDTO.setFlag(false);
+
+        request.setAttribute("queryTasks",EvcardService.QUERYS);
         request.setAttribute("cardType", Arrays.asList(cardTyp.split(",")));
         List<AreaResq> areaResqList =  JSONArray.parseArray(options,AreaResq.class);
         request.setAttribute("options",areaResqList);

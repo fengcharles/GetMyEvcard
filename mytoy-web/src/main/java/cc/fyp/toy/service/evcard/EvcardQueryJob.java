@@ -1,34 +1,34 @@
 package cc.fyp.toy.service.evcard;
 
-import cc.fyp.toy.service.evcard.dto.QueryDTO;
+import cc.fyp.toy.service.evcard.dto.QueryTask;
 
 public class EvcardQueryJob implements Runnable {
 
-    public  QueryDTO queryDTO;
+    public QueryTask queryTask;
 
     @Override
     public void run() {
 
-        while (true && queryDTO.timeOut()){
+        while (queryTask.getFlag() && queryTask.timeOut()){
             EvcardService evcardService = new EvcardService();
-            Boolean flag = evcardService.findUseCar(queryDTO);
+            Boolean flag = evcardService.findUseCar(queryTask);
             if (flag == true){
                 break;
             }
             try {
-                Thread.sleep(queryDTO.getQuerySeq());
+                Thread.sleep(queryTask.getQuerySeq());
             } catch (InterruptedException e) {
-                EvcardService.QUERYS.remove(queryDTO);
+                EvcardService.QUERYS.remove(queryTask);
             }
         }
-        EvcardService.QUERYS.remove(queryDTO);
+        EvcardService.QUERYS.remove(queryTask);
     }
 
-    public QueryDTO getQueryDTO() {
-        return queryDTO;
+    public QueryTask getQueryTask() {
+        return queryTask;
     }
 
-    public void setQueryDTO(QueryDTO queryDTO) {
-        this.queryDTO = queryDTO;
+    public void setQueryTask(QueryTask queryTask) {
+        this.queryTask = queryTask;
     }
 }

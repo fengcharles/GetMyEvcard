@@ -32,24 +32,26 @@ public class EvcardService{
     @Value("${card.arae}")
     private String options;
 
-    public static final List<QueryDTO> QUERYS = new ArrayList<>();
+    public static final List<QueryTask> QUERYS = new ArrayList<>();
 
-    public void loadCard(QueryDTO option){
+    public void loadCard(QueryDTO queryParam){
 
         List<AreaResq> areaResqList =  JSONArray.parseArray(options,AreaResq.class);
-        option.getAreas().forEach(ap->{
-            QueryDTO query = new QueryDTO();
+        queryParam.getAreas().forEach(ap->{
+            QueryTask query = new QueryTask();
             query.setOption(ap);
-            query.setTypes(option.getTypes());
-            query.setStartDate(option.getStartDate());
-            query.setQueryTime(option.getQueryTime());
-            query.setOil(option.getOil());
-            query.setQuerySeq(option.getQuerySeq());
+            query.setTypes(queryParam.getTypes());
+            query.setStartDate(queryParam.getStartDate());
+            query.setQueryTime(queryParam.getQueryTime());
+            query.setOil(queryParam.getOil());
+            query.setQuerySeq(queryParam.getQuerySeq());
             String name = areaResqList.stream().filter(a -> a.getId().equals(ap)).map(AreaResq::getName).findFirst().get();
             query.setSeqName(name);
             query.setHost(reqHost);
+            query.setFlag(true);
+            query.setTaskId(System.currentTimeMillis());
             EvcardQueryJob evcardQueryJob = new EvcardQueryJob();
-            evcardQueryJob.setQueryDTO(query);
+            evcardQueryJob.setQueryTask(query);
             taskExecutor.execute(evcardQueryJob);
             QUERYS.add(query);
         });
@@ -61,7 +63,7 @@ public class EvcardService{
      * @param option
      * @return
      */
-    public  Boolean findUseCar(QueryDTO option){
+    public  Boolean findUseCar(QueryTask option){
         EvcardApi evcardApi = new EvcardApi();
         QueryCardReqst reqst = new QueryCardReqst();
         reqst.setCanRent("1");
@@ -95,7 +97,7 @@ public class EvcardService{
     }
 
 
-    private  void sortCardList(List<Evcards> canUseList,StringBuffer sb,QueryDTO option){
+    private  void sortCardList(List<Evcards> canUseList, StringBuffer sb, QueryTask option){
         canUseList = canUseList.stream()
                 .sorted((o,n) -> n.getDrivingRange().compareTo(o.getDrivingRange())).collect(Collectors.toList());
 
