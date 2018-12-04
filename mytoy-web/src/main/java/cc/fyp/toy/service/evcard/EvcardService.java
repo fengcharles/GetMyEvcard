@@ -49,7 +49,7 @@ public class EvcardService{
             query.setSeqName(name);
             query.setHost(reqHost);
             query.setFlag(true);
-            query.setTaskId(System.currentTimeMillis());
+            query.setTaskId(System.currentTimeMillis()+ap);
             EvcardQueryJob evcardQueryJob = new EvcardQueryJob();
             evcardQueryJob.setQueryTask(query);
             taskExecutor.execute(evcardQueryJob);

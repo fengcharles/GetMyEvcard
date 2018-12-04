@@ -25,7 +25,7 @@
     <thead>
         <th>区域</th>
         <th>车型</th>
-        <th>开始时间</th>
+        <th>状态</th>
         <th>操作</th>
     </thead>
     <tbody >
@@ -33,7 +33,7 @@
             <form action="cancel"  method="post" >
                 <td th:text="${query.seqName}"></td>
                 <td th:text="${query.types}"></td>
-                <td th:text="${query.strStartDate}"></td>
+                <td th:id="'option_'+ ${query.option}" ></td>
                 <td><button type="submit" class="btn btn-default"  name="taskId" th:value="${query.taskId}">取消</button> </td>
             </form>
         </tr>
@@ -79,7 +79,8 @@
 
     //将消息显示在表格上
     function setMessageInnerHTML(innerHTML) {
-        document.getElementById('message').innerHTML =innerHTML;
+        var json =  JSON.parse(innerHTML);
+        document.getElementById('option_' + json.option ).innerHTML =json.mesg;
     }
 
     //关闭WebSocket连接

@@ -3,8 +3,8 @@ package cc.fyp.toy.service.evcard;
 import cc.fyp.toy.controller.WebSocket;
 import cc.fyp.toy.service.evcard.dto.FindCarResultDTO;
 import cc.fyp.toy.service.evcard.dto.QueryTask;
+import com.alibaba.fastjson.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 
 public class EvcardQueryJob implements Runnable {
@@ -17,7 +17,7 @@ public class EvcardQueryJob implements Runnable {
         while (queryTask.getFlag() && queryTask.timeOut()){
             EvcardService evcardService = new EvcardService();
             FindCarResultDTO useCar = evcardService.findUseCar(queryTask);
-            senMesg(useCar);
+            senMesg(useCar,queryTask);
             if (useCar.getFlag() == true){
                 break;
             }
@@ -38,10 +38,18 @@ public class EvcardQueryJob implements Runnable {
         this.queryTask = queryTask;
     }
 
-    public  void senMesg(FindCarResultDTO useCar){
-        LocalDateTime dateTime = LocalDateTime.now();
-        String val = String.format("%s:%s:%s   状态:%s/%s",dateTime.getHour(),dateTime.getMinute(),dateTime.getSecond(),useCar.getFlag(),useCar.getMesg());
-        WebSocket.webSocketSet.forEach(set-> set.sendMessage(val));
+    public  void senMesg(FindCarResultDTO useCar,QueryTask queryTask){
+
+        try {
+            LocalDateTime dateTime = LocalDateTime.now();
+            String val = String.format("%s:%s:%s   状态:%s/%s",dateTime.getHour(),dateTime.getMinute(),dateTime.getSecond(),useCar.getFlag(),useCar.getMesg());
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("option",queryTask.getOption());
+            jsonObject.put("mesg",val);
+            WebSocket.webSocketSet.forEach(set-> set.sendMessage(jsonObject.toJSONString()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

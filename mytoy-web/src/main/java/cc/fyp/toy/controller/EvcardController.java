@@ -1,10 +1,7 @@
 package cc.fyp.toy.controller;
 
 import cc.fyp.toy.service.evcard.EvcardService;
-import cc.fyp.toy.service.evcard.dto.AreaResq;
-import cc.fyp.toy.service.evcard.dto.EvcardComm;
-import cc.fyp.toy.service.evcard.dto.QueryDTO;
-import cc.fyp.toy.service.evcard.dto.QueryTask;
+import cc.fyp.toy.service.evcard.dto.*;
 import cc.fyp.toy.service.evcard.outapi.EvcardApi;
 import com.alibaba.fastjson.JSONArray;
 import org.slf4j.Logger;
@@ -75,8 +72,10 @@ public class EvcardController {
     @RequestMapping(value = "cancel")
     public String cancel(HttpServletRequest request,Long taskId){
 
-        QueryTask queryDTO = EvcardService.QUERYS.stream().filter(qt -> qt.getTaskId().equals(taskId)).findFirst().get();
-        queryDTO.setFlag(false);
+        if (!EvcardService.QUERYS.isEmpty()){
+            QueryTask queryDTO = EvcardService.QUERYS.stream().filter(qt -> qt.getTaskId().equals(taskId)).findFirst().get();
+            queryDTO.setFlag(false);
+        }
 
         request.setAttribute("queryTasks",EvcardService.QUERYS);
         request.setAttribute("cardType", Arrays.asList(cardTyp.split(",")));
