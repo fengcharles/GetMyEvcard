@@ -63,16 +63,18 @@ public class EvcardService{
      * @param option
      * @return
      */
-    public  Boolean findUseCar(QueryTask option){
+    public  FindCarResultDTO findUseCar(QueryTask option){
         EvcardApi evcardApi = new EvcardApi();
         QueryCardReqst reqst = new QueryCardReqst();
         reqst.setCanRent("1");
         reqst.setShopSeq(Long.valueOf(option.getOption()));
-        List<Evcards> list =  evcardApi.findCards(reqst,getHeader());
+        EvcardComm evcardComm =  evcardApi.findCards(reqst,getHeader());
+        if (evcardComm.getStatus() != 0){
+            return  new FindCarResultDTO(false,evcardComm.getMessage());
+        }
+        List<Evcards> list =  evcardComm.loadDataList(Evcards.class);
 
         StringBuffer sb = new StringBuffer();
-        sb.append("@李斯-银鹏");
-        sb.append("\n");
         sb.append("查询到了符合的车辆");
         sb.append("\n");
         sb.append("=================");
@@ -88,12 +90,12 @@ public class EvcardService{
         }
 
         if (canUseList.size()==0){
-            return false;
+            return  new FindCarResultDTO(false,"无车");
         }
         this.sortCardList(canUseList,sb,option);
         DingTalkMesg.callMe(sb.toString());
         QUERYS.remove(option);
-        return  true;
+        return  new FindCarResultDTO(true,"已查到");
     }
 
 
@@ -117,7 +119,7 @@ public class EvcardService{
             sb.append("\n");
             sb.append("=================");
         });
-        System.out.println(canUseList);
+        logger.info(canUseList.toString());
     }
 
     public EvcardComm order(String seq,String vin){

@@ -34,6 +34,9 @@ public class EvcardController {
     @Value("${card.arae}")
     private String options;
 
+    @Value("${card.host}")
+    private String host;
+
     @RequestMapping(value = "show")
     public String showbase(HttpServletRequest request, HttpServletResponse response){
         logger.info("请求show");
@@ -54,6 +57,7 @@ public class EvcardController {
         request.setAttribute("cardType", Arrays.asList(cardTyp.split(",")));
         List<AreaResq> areaResqList =  JSONArray.parseArray(options,AreaResq.class);
         request.setAttribute("options",areaResqList);
+        request.setAttribute("host",host);
         return "tool/process";
     }
 
@@ -63,6 +67,7 @@ public class EvcardController {
         request.setAttribute("cardType", Arrays.asList(cardTyp.split(",")));
         List<AreaResq> areaResqList =  JSONArray.parseArray(options,AreaResq.class);
         request.setAttribute("options",areaResqList);
+        request.setAttribute("host",host);
         return "tool/process";
     }
 

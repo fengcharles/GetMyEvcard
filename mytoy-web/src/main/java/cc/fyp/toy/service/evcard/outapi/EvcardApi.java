@@ -51,19 +51,20 @@ public class EvcardApi {
      * 从某个停车点获取符合条件的车辆
      * @return
      */
-    public List<Evcards> findCards(QueryCardReqst param,EvcardHeader header){
-
+    public EvcardComm findCards(QueryCardReqst param,EvcardHeader header){
+        EvcardComm evcardComm = null;
         try {
             JSONObject strParam = (JSONObject) JSONObject.toJSON(param);
             JSONObject json = this.callEvcard(header,strParam.toString(),SERVICE_VEHICLEiNFO);
-            JSONArray jsonArray = json.getJSONArray("dataList");
-            logger.info("原始请求结果：{}",json);
-            List<Evcards> list = JSONArray.parseArray(jsonArray.toJSONString(), Evcards.class);
-            return list;
+            evcardComm = json.toJavaObject(EvcardComm.class);
+            logger.info("查询结果:{}",evcardComm);
         } catch (Exception e) {
             e.printStackTrace();
+            evcardComm = new EvcardComm();
+            evcardComm.setStatus(-1);
+            evcardComm.setMessage("调用远程服务异常");
         }
-        return Collections.emptyList();
+        return evcardComm;
     }
 
     /**
@@ -153,7 +154,10 @@ public class EvcardApi {
             return jsonObject;
         } catch (IOException e) {
             e.printStackTrace();
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("status",-1);
+            jsonObject.put("message","调用接口失败");
+            return jsonObject;
         }
-        return null;
     }
 }

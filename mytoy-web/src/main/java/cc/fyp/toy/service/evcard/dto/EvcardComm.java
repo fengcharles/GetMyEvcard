@@ -18,6 +18,18 @@ public class EvcardComm {
     private String dataList;
 
 
+    @Override
+    public String toString() {
+        return "EvcardComm{" +
+                "serialNum=" + serialNum +
+                ", status=" + status +
+                ", message='" + message + '\'' +
+                ", serviceName='" + serviceName + '\'' +
+                ", token='" + token + '\'' +
+                ", dataList='" + dataList + '\'' +
+                '}';
+    }
+
     public <T> T loadData  (Class<T> cla){
         T  xx = JSONObject.parseObject(dataList,cla);
         return xx;

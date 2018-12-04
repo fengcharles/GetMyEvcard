@@ -1,5 +1,6 @@
 package cc.fyp.toy.service.mesg;
 
+import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.ParseException;
@@ -11,10 +12,13 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 import java.nio.charset.UnsupportedCharsetException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class DingTalkMesg {
 
-    private static final String WEBHOOK_TOKEN = "https://oapi.dingtalk.com/robot/send?access_token=29cdd3647ddf211fc8837f27f4deb47c6a8295b98efe4687639e23f1bd083a3a";
+    private static final String WEBHOOK_TOKEN = "https://oapi.dingtalk.com/robot/send?access_token=ca674db7ba5a77591873d1a1b9345cdac4c2c0953e8b2c00e3826375acc74bbd";
 
 
     public  static  void callMe (String mesg){
@@ -25,8 +29,18 @@ public class DingTalkMesg {
             HttpPost httppost = new HttpPost(WEBHOOK_TOKEN);
             httppost.addHeader("Content-Type", "application/json; charset=utf-8");
 
-            String textMsg = "{ \"msgtype\": \"text\", \"text\": {\"content\": \""+mesg+"\"}}";
-            StringEntity se = new StringEntity(textMsg, "utf-8");
+            JSONObject mesgJson = new JSONObject();
+            JSONObject content = new JSONObject();
+            JSONObject atInfo = new JSONObject();
+            List<Long> mobiles = Arrays.asList(13052375352L);
+            mesgJson.put("msgtype","text");
+
+            content.put("content",mesg);
+            mesgJson.put("text",content);
+            atInfo.put("atMobiles",mobiles);
+            mesgJson.put("at",atInfo);
+
+            StringEntity se = new StringEntity(mesgJson.toString(), "utf-8");
             httppost.setEntity(se);
 
             HttpResponse response = httpclient.execute(httppost);
@@ -46,7 +60,7 @@ public class DingTalkMesg {
 
     public static void main(String args[]) throws Exception{
 
-        callMe("@李斯-银鹏 wqeqwe ");
+        callMe("你好:");
 
     }
 
