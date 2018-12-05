@@ -20,25 +20,32 @@
         </div>
     </div>
 </nav>
-<p class="bg-primary" id="message"></p>
-<table class="table">
-    <thead>
-        <th>区域</th>
-        <th>车型</th>
-        <th>状态</th>
-        <th>操作</th>
-    </thead>
-    <tbody >
-        <tr th:each="query:${queryTasks}">
-            <form action="cancel"  method="post" >
-                <td th:text="${query.seqName}"></td>
+
+<div class="container-fluid" th:each="query:${queryTasks}"  >
+    <table class="table  table-bordered table-condensed" >
+        <tbody>
+          <form action="cancel"  method="post" >
+            <tr class="info">
+                <td>
+                    <h4 th:text="${query.seqName}"></h4>
+                </td>
+            </tr>
+            <tr>
                 <td th:text="${query.types}"></td>
-                <td th:id="'option_'+ ${query.option}" ></td>
-                <td><button type="submit" class="btn btn-default"  name="taskId" th:value="${query.taskId}">取消</button> </td>
-            </form>
-        </tr>
-    </tbody>
-</table>
+            </tr>
+            <tr>
+                <td th:id="'taskId_'+ ${query.taskId}"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-danger btn-block"  name="taskId" th:value="${query.taskId}">取消</button>
+                </td>
+            </tr>
+          </form>
+        </tbody>
+    </table>
+</div>
+
 </body>
 
 <script type="text/javascript" th:inline="javascript">
@@ -80,7 +87,7 @@
     //将消息显示在表格上
     function setMessageInnerHTML(innerHTML) {
         var json =  JSON.parse(innerHTML);
-        document.getElementById('option_' + json.option ).innerHTML =json.mesg;
+        document.getElementById('taskId_' + json.taskId ).innerHTML =json.mesg;
     }
 
     //关闭WebSocket连接

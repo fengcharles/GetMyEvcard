@@ -44,7 +44,7 @@ public class EvcardQueryJob implements Runnable {
             LocalDateTime dateTime = LocalDateTime.now();
             String val = String.format("%s:%s:%s   状态:%s/%s",dateTime.getHour(),dateTime.getMinute(),dateTime.getSecond(),useCar.getFlag(),useCar.getMesg());
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("option",queryTask.getOption());
+            jsonObject.put("taskId",queryTask.getTaskId());
             jsonObject.put("mesg",val);
             WebSocket.webSocketSet.forEach(set-> set.sendMessage(jsonObject.toJSONString()));
         } catch (Exception e) {

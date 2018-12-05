@@ -72,15 +72,19 @@ public class EvcardController {
     @RequestMapping(value = "cancel")
     public String cancel(HttpServletRequest request,Long taskId){
 
+        List<QueryTask> copyTasks = new ArrayList<>();
+        copyTasks.addAll(EvcardService.QUERYS);
         if (!EvcardService.QUERYS.isEmpty()){
             QueryTask queryDTO = EvcardService.QUERYS.stream().filter(qt -> qt.getTaskId().equals(taskId)).findFirst().get();
+            copyTasks.remove(queryDTO);
             queryDTO.setFlag(false);
         }
 
-        request.setAttribute("queryTasks",EvcardService.QUERYS);
+        request.setAttribute("queryTasks",copyTasks);
         request.setAttribute("cardType", Arrays.asList(cardTyp.split(",")));
         List<AreaResq> areaResqList =  JSONArray.parseArray(options,AreaResq.class);
         request.setAttribute("options",areaResqList);
+        request.setAttribute("host",host);
         return "tool/process";
     }
 
