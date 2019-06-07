@@ -34,7 +34,7 @@ public class CreateThread implements Runnable {
                     product.setIndex(list.size()+1);
                     product.setCreatName(Thread.currentThread().getName());
                     list.add(product);
-                    Thread.sleep(1000);
+                    Thread.sleep(500);
                     System.out.println(threadName + "生产了一个商品，放入篮子。。。。,篮子数量："+ list.size());
                     list.notify();
                 }
