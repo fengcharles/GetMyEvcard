@@ -13,4 +13,8 @@ public class Parent {
         return 1;
     }
 
+    public  final Double test1(){
+        return Double.MAX_VALUE;
+    }
+
 }
