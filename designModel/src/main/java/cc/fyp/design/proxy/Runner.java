@@ -22,6 +22,7 @@ public class Runner {
         GamerInvocationHander gamerInvocationHander = new GamerInvocationHander(gamer);
         Class<?>[] cls = new Class[]{IGamer.class};
 
+        //这个类就是新的代理类，已经不是原来的gamer了
         IGamer neGamer =(IGamer)Proxy.newProxyInstance(gamer.getClass().getClassLoader(), cls, gamerInvocationHander);
 
         neGamer.exit();
