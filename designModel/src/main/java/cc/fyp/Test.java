@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
  * @description:
  * @date 2019-06-2715:22
  */
-public class test {
+public class Test {
 
 
     public static String myjson = "[\n" +
