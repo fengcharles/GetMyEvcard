@@ -1,0 +1,675 @@
+2020-01-08 16:05:53.595 [restartedMain] INFO  cc.fyp.toy.init.Application - Starting Application on von-charlesdeMacBook-Pro.local with PID 37708 (/Users/von/data/myproject/projects/mytoy/mytoy-web/target/classes started by von in /Users/von/data/myproject/projects/mytoy/mytoy-web)
+2020-01-08 16:05:53.602 [restartedMain] INFO  cc.fyp.toy.init.Application - No active profile set, falling back to default profiles: default
+2020-01-08 16:05:53.802 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@43813d6: startup date [Wed Jan 08 16:05:53 CST 2020]; root of context hierarchy
+2020-01-08 16:05:53.872 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2020-01-08 16:05:54.863 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9023 (http)
+2020-01-08 16:05:54.873 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-01-08 16:05:54.874 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2020-01-08 16:05:55.038 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-01-08 16:05:55.043 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mytoy] - Initializing Spring embedded WebApplicationContext
+2020-01-08 16:05:55.044 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1242 ms
+2020-01-08 16:05:55.142 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2020-01-08 16:05:55.144 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-01-08 16:05:55.144 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-01-08 16:05:55.144 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-01-08 16:05:55.144 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-01-08 16:05:55.188 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService  'taskExecutor'
+2020-01-08 16:05:55.394 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@43813d6: startup date [Wed Jan 08 16:05:53 CST 2020]; root of context hierarchy
+2020-01-08 16:05:55.442 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/order],methods=[GET]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.order(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+2020-01-08 16:05:55.443 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/cancel]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.cancel(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2020-01-08 16:05:55.443 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/process]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.process(javax.servlet.http.HttpServletRequest,cc.fyp.toy.service.evcard.dto.QueryTask)
+2020-01-08 16:05:55.444 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/show]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:05:55.444 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/go]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.go(javax.servlet.http.HttpServletRequest,cc.fyp.toy.service.evcard.dto.QueryDTO)
+2020-01-08 16:05:55.444 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/login],methods=[GET]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.login(javax.servlet.http.HttpServletRequest)
+2020-01-08 16:05:55.446 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/getVehicleInfoList],methods=[POST]}" onto public java.lang.String cc.fyp.toy.controller.ProxyApiController.getVehicleInfoList(javax.servlet.http.HttpServletRequest,java.lang.String)
+2020-01-08 16:05:55.446 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/forlt/show]}" onto public java.lang.String cc.fyp.toy.controller.ShowController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:05:55.447 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tmlf/index]}" onto public org.springframework.web.servlet.ModelAndView cc.fyp.toy.controller.ThymelifeController.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2020-01-08 16:05:55.449 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-01-08 16:05:55.449 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:05:55.469 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:05:55.469 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:05:55.493 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:05:55.840 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-01-08 16:05:55.872 [restartedMain] INFO  o.s.w.s.server.standard.ServerEndpointExporter - Registering @ServerEndpoint class: class cc.fyp.toy.controller.WebSocket
+2020-01-08 16:05:55.879 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-01-08 16:05:55.891 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9023"]
+2020-01-08 16:05:55.970 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9023"]
+2020-01-08 16:05:55.983 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-01-08 16:05:56.002 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9023 (http)
+2020-01-08 16:05:56.005 [restartedMain] INFO  cc.fyp.toy.init.Application - Started Application in 2.706 seconds (JVM running for 3.117)
+2020-01-08 16:06:44.027 [http-nio-9023-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mytoy] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-01-08 16:06:44.028 [http-nio-9023-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2020-01-08 16:06:44.046 [http-nio-9023-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+2020-01-08 16:08:26.264 [http-nio-9023-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2020-01-08 16:08:26.299 [http-nio-9023-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2020-01-08 16:08:26.299 [http-nio-9023-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2020-01-08 16:08:26.299 [http-nio-9023-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2020-01-08 16:08:26.299 [http-nio-9023-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2020-01-08 16:08:26.302 [http-nio-9023-exec-8] INFO  org.thymeleaf.TemplateEngine.CONFIG - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2020-01-08 16:08:26.303 [http-nio-9023-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2020-01-08 16:08:26.338 [http-nio-9023-exec-8] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-9023-exec-8] Exception processing template "/pages/tool/t": Error resolving template "/pages/tool/t", template might not exist or might not be accessible by any of the configured Template Resolvers
+2020-01-08 16:08:26.341 [http-nio-9023-exec-8] ERROR o.a.c.c.C.[.[.[/mytoy].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/mytoy] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template "/pages/tool/t", template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template "/pages/tool/t", template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:246)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-01-08 16:08:45.066 [http-nio-9023-exec-10] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-9023-exec-10] Exception processing template "/pages/tool/t": Error resolving template "/pages/tool/t", template might not exist or might not be accessible by any of the configured Template Resolvers
+2020-01-08 16:08:45.067 [http-nio-9023-exec-10] ERROR o.a.c.c.C.[.[.[/mytoy].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/mytoy] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template "/pages/tool/t", template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template "/pages/tool/t", template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:246)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-01-08 16:09:49.535 [restartedMain] INFO  cc.fyp.toy.init.Application - Starting Application on von-charlesdeMacBook-Pro.local with PID 37746 (/Users/von/data/myproject/projects/mytoy/mytoy-web/target/classes started by von in /Users/von/data/myproject/projects/mytoy/mytoy-web)
+2020-01-08 16:09:49.537 [restartedMain] INFO  cc.fyp.toy.init.Application - No active profile set, falling back to default profiles: default
+2020-01-08 16:09:49.680 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@43813d6: startup date [Wed Jan 08 16:09:49 CST 2020]; root of context hierarchy
+2020-01-08 16:09:49.726 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2020-01-08 16:09:50.586 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9023 (http)
+2020-01-08 16:09:50.595 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-01-08 16:09:50.596 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2020-01-08 16:09:50.741 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-01-08 16:09:50.744 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mytoy] - Initializing Spring embedded WebApplicationContext
+2020-01-08 16:09:50.745 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1065 ms
+2020-01-08 16:09:50.833 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2020-01-08 16:09:50.835 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-01-08 16:09:50.836 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-01-08 16:09:50.836 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-01-08 16:09:50.836 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-01-08 16:09:50.877 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService  'taskExecutor'
+2020-01-08 16:09:51.085 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@43813d6: startup date [Wed Jan 08 16:09:49 CST 2020]; root of context hierarchy
+2020-01-08 16:09:51.130 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/order],methods=[GET]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.order(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+2020-01-08 16:09:51.130 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/cancel]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.cancel(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2020-01-08 16:09:51.131 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/process]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.process(javax.servlet.http.HttpServletRequest,cc.fyp.toy.service.evcard.dto.QueryTask)
+2020-01-08 16:09:51.131 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/go]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.go(javax.servlet.http.HttpServletRequest,cc.fyp.toy.service.evcard.dto.QueryDTO)
+2020-01-08 16:09:51.131 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/show]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:09:51.131 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/login],methods=[GET]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.login(javax.servlet.http.HttpServletRequest)
+2020-01-08 16:09:51.133 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/getVehicleInfoList],methods=[POST]}" onto public java.lang.String cc.fyp.toy.controller.ProxyApiController.getVehicleInfoList(javax.servlet.http.HttpServletRequest,java.lang.String)
+2020-01-08 16:09:51.133 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/forlt/show]}" onto public java.lang.String cc.fyp.toy.controller.ShowController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:09:51.134 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tmlf/index]}" onto public org.springframework.web.servlet.ModelAndView cc.fyp.toy.controller.ThymelifeController.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2020-01-08 16:09:51.136 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-01-08 16:09:51.137 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:09:51.156 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:09:51.156 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:09:51.178 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:09:51.472 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-01-08 16:09:51.509 [restartedMain] INFO  o.s.w.s.server.standard.ServerEndpointExporter - Registering @ServerEndpoint class: class cc.fyp.toy.controller.WebSocket
+2020-01-08 16:09:51.516 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-01-08 16:09:51.527 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9023"]
+2020-01-08 16:09:51.534 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9023"]
+2020-01-08 16:09:51.600 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-01-08 16:09:51.619 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9023 (http)
+2020-01-08 16:09:51.623 [restartedMain] INFO  cc.fyp.toy.init.Application - Started Application in 2.235 seconds (JVM running for 2.587)
+2020-01-08 16:09:54.305 [http-nio-9023-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mytoy] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-01-08 16:09:54.305 [http-nio-9023-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2020-01-08 16:09:54.320 [http-nio-9023-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
+2020-01-08 16:09:54.344 [http-nio-9023-exec-1] INFO  cc.fyp.toy.controller.EvcardController - ??show
+2020-01-08 16:09:54.426 [http-nio-9023-exec-1] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2020-01-08 16:09:54.454 [http-nio-9023-exec-1] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2020-01-08 16:09:54.454 [http-nio-9023-exec-1] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2020-01-08 16:09:54.454 [http-nio-9023-exec-1] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2020-01-08 16:09:54.454 [http-nio-9023-exec-1] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2020-01-08 16:09:54.459 [http-nio-9023-exec-1] INFO  org.thymeleaf.TemplateEngine.CONFIG - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * XML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2020-01-08 16:09:54.459 [http-nio-9023-exec-1] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2020-01-08 16:10:01.502 [http-nio-9023-exec-2] INFO  cc.fyp.toy.controller.EvcardController - ??show
+2020-01-08 16:10:02.066 [http-nio-9023-exec-3] INFO  cc.fyp.toy.controller.EvcardController - ??show
+2020-01-08 16:10:15.436 [restartedMain] INFO  cc.fyp.toy.init.Application - Starting Application on von-charlesdeMacBook-Pro.local with PID 37753 (/Users/von/data/myproject/projects/mytoy/mytoy-web/target/classes started by von in /Users/von/data/myproject/projects/mytoy/mytoy-web)
+2020-01-08 16:10:15.437 [restartedMain] INFO  cc.fyp.toy.init.Application - No active profile set, falling back to default profiles: default
+2020-01-08 16:10:15.583 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@60144589: startup date [Wed Jan 08 16:10:15 CST 2020]; root of context hierarchy
+2020-01-08 16:10:15.630 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2020-01-08 16:10:16.498 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9023 (http)
+2020-01-08 16:10:16.507 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-01-08 16:10:16.508 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2020-01-08 16:10:16.646 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-01-08 16:10:16.650 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mytoy] - Initializing Spring embedded WebApplicationContext
+2020-01-08 16:10:16.650 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1067 ms
+2020-01-08 16:10:16.735 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2020-01-08 16:10:16.738 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-01-08 16:10:16.738 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-01-08 16:10:16.738 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-01-08 16:10:16.738 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-01-08 16:10:16.779 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService  'taskExecutor'
+2020-01-08 16:10:16.976 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@60144589: startup date [Wed Jan 08 16:10:15 CST 2020]; root of context hierarchy
+2020-01-08 16:10:17.017 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/order],methods=[GET]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.order(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+2020-01-08 16:10:17.018 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/show]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:10:17.018 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/login],methods=[GET]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.login(javax.servlet.http.HttpServletRequest)
+2020-01-08 16:10:17.018 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/process]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.process(javax.servlet.http.HttpServletRequest,cc.fyp.toy.service.evcard.dto.QueryTask)
+2020-01-08 16:10:17.018 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/cancel]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.cancel(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2020-01-08 16:10:17.018 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/go]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.go(javax.servlet.http.HttpServletRequest,cc.fyp.toy.service.evcard.dto.QueryDTO)
+2020-01-08 16:10:17.020 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/getVehicleInfoList],methods=[POST]}" onto public java.lang.String cc.fyp.toy.controller.ProxyApiController.getVehicleInfoList(javax.servlet.http.HttpServletRequest,java.lang.String)
+2020-01-08 16:10:17.021 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/forlt/show]}" onto public java.lang.String cc.fyp.toy.controller.ShowController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:10:17.021 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tmlf/index]}" onto public org.springframework.web.servlet.ModelAndView cc.fyp.toy.controller.ThymelifeController.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2020-01-08 16:10:17.024 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-01-08 16:10:17.024 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:10:17.045 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:10:17.045 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:10:17.067 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:10:17.371 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-01-08 16:10:17.402 [restartedMain] INFO  o.s.w.s.server.standard.ServerEndpointExporter - Registering @ServerEndpoint class: class cc.fyp.toy.controller.WebSocket
+2020-01-08 16:10:17.408 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-01-08 16:10:17.419 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9023"]
+2020-01-08 16:10:17.426 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9023"]
+2020-01-08 16:10:17.506 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-01-08 16:10:17.523 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9023 (http)
+2020-01-08 16:10:17.526 [restartedMain] INFO  cc.fyp.toy.init.Application - Started Application in 2.24 seconds (JVM running for 2.57)
+2020-01-08 16:10:21.886 [http-nio-9023-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mytoy] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-01-08 16:10:21.886 [http-nio-9023-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2020-01-08 16:10:21.898 [http-nio-9023-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
+2020-01-08 16:10:21.918 [http-nio-9023-exec-1] INFO  cc.fyp.toy.controller.EvcardController - ??show
+2020-01-08 16:10:21.996 [http-nio-9023-exec-1] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2020-01-08 16:10:22.022 [http-nio-9023-exec-1] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2020-01-08 16:10:22.022 [http-nio-9023-exec-1] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2020-01-08 16:10:22.022 [http-nio-9023-exec-1] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2020-01-08 16:10:22.022 [http-nio-9023-exec-1] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2020-01-08 16:10:22.026 [http-nio-9023-exec-1] INFO  org.thymeleaf.TemplateEngine.CONFIG - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2020-01-08 16:10:22.026 [http-nio-9023-exec-1] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2020-01-08 16:10:24.528 [http-nio-9023-exec-2] INFO  cc.fyp.toy.controller.EvcardController - ??show
+2020-01-08 16:10:25.079 [http-nio-9023-exec-3] INFO  cc.fyp.toy.controller.EvcardController - ??show
+2020-01-08 16:10:25.292 [http-nio-9023-exec-4] INFO  cc.fyp.toy.controller.EvcardController - ??show
+2020-01-08 16:10:25.717 [http-nio-9023-exec-5] INFO  cc.fyp.toy.controller.EvcardController - ??show
+2020-01-08 16:10:25.935 [http-nio-9023-exec-6] INFO  cc.fyp.toy.controller.EvcardController - ??show
+2020-01-08 16:10:26.136 [http-nio-9023-exec-7] INFO  cc.fyp.toy.controller.EvcardController - ??show
+2020-01-08 16:10:26.313 [http-nio-9023-exec-8] INFO  cc.fyp.toy.controller.EvcardController - ??show
+2020-01-08 16:10:26.511 [http-nio-9023-exec-9] INFO  cc.fyp.toy.controller.EvcardController - ??show
+2020-01-08 16:10:26.698 [http-nio-9023-exec-10] INFO  cc.fyp.toy.controller.EvcardController - ??show
+2020-01-08 16:10:26.888 [http-nio-9023-exec-1] INFO  cc.fyp.toy.controller.EvcardController - ??show
+2020-01-08 16:10:28.730 [http-nio-9023-exec-2] INFO  cc.fyp.toy.controller.EvcardController - ??QueryDTO{areas=null, types=null, oil=40, startDate=null, querySeq=1000, seqName='null', queryTime=120}??
+2020-01-08 16:10:28.738 [http-nio-9023-exec-2] ERROR o.a.c.c.C.[.[.[/mytoy].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/mytoy] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at cc.fyp.toy.service.evcard.EvcardService.loadCard(EvcardService.java:40)
+	at cc.fyp.toy.controller.EvcardController.go(EvcardController.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-01-08 16:11:18.724 [restartedMain] INFO  cc.fyp.toy.init.Application - Starting Application on von-charlesdeMacBook-Pro.local with PID 37763 (/Users/von/data/myproject/projects/mytoy/mytoy-web/target/classes started by von in /Users/von/data/myproject/projects/mytoy/mytoy-web)
+2020-01-08 16:11:18.726 [restartedMain] INFO  cc.fyp.toy.init.Application - No active profile set, falling back to default profiles: default
+2020-01-08 16:11:18.903 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@43813d6: startup date [Wed Jan 08 16:11:18 CST 2020]; root of context hierarchy
+2020-01-08 16:11:18.957 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2020-01-08 16:11:19.900 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9023 (http)
+2020-01-08 16:11:19.909 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-01-08 16:11:19.909 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2020-01-08 16:11:20.054 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-01-08 16:11:20.058 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mytoy] - Initializing Spring embedded WebApplicationContext
+2020-01-08 16:11:20.059 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1156 ms
+2020-01-08 16:11:20.188 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2020-01-08 16:11:20.191 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-01-08 16:11:20.191 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-01-08 16:11:20.191 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-01-08 16:11:20.191 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-01-08 16:11:20.245 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService  'taskExecutor'
+2020-01-08 16:11:20.467 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@43813d6: startup date [Wed Jan 08 16:11:18 CST 2020]; root of context hierarchy
+2020-01-08 16:11:20.518 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/export/show]}" onto public java.lang.String cc.fyp.bmb.controller.ExportController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:11:20.520 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/order],methods=[GET]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.order(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+2020-01-08 16:11:20.521 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/cancel]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.cancel(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2020-01-08 16:11:20.521 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/process]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.process(javax.servlet.http.HttpServletRequest,cc.fyp.toy.service.evcard.dto.QueryTask)
+2020-01-08 16:11:20.521 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/show]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:11:20.522 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/login],methods=[GET]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.login(javax.servlet.http.HttpServletRequest)
+2020-01-08 16:11:20.522 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/go]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.go(javax.servlet.http.HttpServletRequest,cc.fyp.toy.service.evcard.dto.QueryDTO)
+2020-01-08 16:11:20.524 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/getVehicleInfoList],methods=[POST]}" onto public java.lang.String cc.fyp.toy.controller.ProxyApiController.getVehicleInfoList(javax.servlet.http.HttpServletRequest,java.lang.String)
+2020-01-08 16:11:20.525 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/forlt/show]}" onto public java.lang.String cc.fyp.toy.controller.ShowController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:11:20.526 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tmlf/index]}" onto public org.springframework.web.servlet.ModelAndView cc.fyp.toy.controller.ThymelifeController.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2020-01-08 16:11:20.529 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-01-08 16:11:20.529 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:11:20.553 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:11:20.553 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:11:20.581 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:11:20.893 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-01-08 16:11:20.925 [restartedMain] INFO  o.s.w.s.server.standard.ServerEndpointExporter - Registering @ServerEndpoint class: class cc.fyp.toy.controller.WebSocket
+2020-01-08 16:11:20.932 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-01-08 16:11:20.942 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9023"]
+2020-01-08 16:11:20.948 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9023"]
+2020-01-08 16:11:21.021 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-01-08 16:11:21.042 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9023 (http)
+2020-01-08 16:11:21.046 [restartedMain] INFO  cc.fyp.toy.init.Application - Started Application in 2.502 seconds (JVM running for 2.941)
+2020-01-08 16:11:37.275 [http-nio-9023-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mytoy] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-01-08 16:11:37.275 [http-nio-9023-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2020-01-08 16:11:37.290 [http-nio-9023-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
+2020-01-08 16:11:37.819 [http-nio-9023-exec-1] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2020-01-08 16:11:37.845 [http-nio-9023-exec-1] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2020-01-08 16:11:37.845 [http-nio-9023-exec-1] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2020-01-08 16:11:37.845 [http-nio-9023-exec-1] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2020-01-08 16:11:37.845 [http-nio-9023-exec-1] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2020-01-08 16:11:37.848 [http-nio-9023-exec-1] INFO  org.thymeleaf.TemplateEngine.CONFIG - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2020-01-08 16:11:37.848 [http-nio-9023-exec-1] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2020-01-08 16:11:37.875 [http-nio-9023-exec-1] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-9023-exec-1] Exception processing template "/pages/tool/t": Error resolving template "/pages/tool/t", template might not exist or might not be accessible by any of the configured Template Resolvers
+2020-01-08 16:11:37.878 [http-nio-9023-exec-1] ERROR o.a.c.c.C.[.[.[/mytoy].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/mytoy] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template "/pages/tool/t", template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template "/pages/tool/t", template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:246)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-01-08 16:12:17.635 [restartedMain] INFO  cc.fyp.toy.init.Application - Starting Application on von-charlesdeMacBook-Pro.local with PID 37775 (/Users/von/data/myproject/projects/mytoy/mytoy-web/target/classes started by von in /Users/von/data/myproject/projects/mytoy/mytoy-web)
+2020-01-08 16:12:17.637 [restartedMain] INFO  cc.fyp.toy.init.Application - No active profile set, falling back to default profiles: default
+2020-01-08 16:12:17.793 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@43813d6: startup date [Wed Jan 08 16:12:17 CST 2020]; root of context hierarchy
+2020-01-08 16:12:17.841 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2020-01-08 16:12:18.794 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9023 (http)
+2020-01-08 16:12:18.803 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-01-08 16:12:18.803 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2020-01-08 16:12:18.946 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-01-08 16:12:18.950 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mytoy] - Initializing Spring embedded WebApplicationContext
+2020-01-08 16:12:18.950 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1157 ms
+2020-01-08 16:12:19.041 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2020-01-08 16:12:19.043 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-01-08 16:12:19.044 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-01-08 16:12:19.044 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-01-08 16:12:19.044 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-01-08 16:12:19.091 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService  'taskExecutor'
+2020-01-08 16:12:19.284 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@43813d6: startup date [Wed Jan 08 16:12:17 CST 2020]; root of context hierarchy
+2020-01-08 16:12:19.325 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/export/show]}" onto public void cc.fyp.bmb.controller.ExportController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:12:19.327 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/order],methods=[GET]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.order(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+2020-01-08 16:12:19.328 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/go]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.go(javax.servlet.http.HttpServletRequest,cc.fyp.toy.service.evcard.dto.QueryDTO)
+2020-01-08 16:12:19.328 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/process]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.process(javax.servlet.http.HttpServletRequest,cc.fyp.toy.service.evcard.dto.QueryTask)
+2020-01-08 16:12:19.328 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/show]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:12:19.328 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/login],methods=[GET]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.login(javax.servlet.http.HttpServletRequest)
+2020-01-08 16:12:19.329 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/cancel]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.cancel(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2020-01-08 16:12:19.330 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/getVehicleInfoList],methods=[POST]}" onto public java.lang.String cc.fyp.toy.controller.ProxyApiController.getVehicleInfoList(javax.servlet.http.HttpServletRequest,java.lang.String)
+2020-01-08 16:12:19.331 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/forlt/show]}" onto public java.lang.String cc.fyp.toy.controller.ShowController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:12:19.331 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tmlf/index]}" onto public org.springframework.web.servlet.ModelAndView cc.fyp.toy.controller.ThymelifeController.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2020-01-08 16:12:19.333 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-01-08 16:12:19.334 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:12:19.353 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:12:19.353 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:12:19.376 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:12:19.725 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-01-08 16:12:19.779 [restartedMain] INFO  o.s.w.s.server.standard.ServerEndpointExporter - Registering @ServerEndpoint class: class cc.fyp.toy.controller.WebSocket
+2020-01-08 16:12:19.790 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-01-08 16:12:19.806 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9023"]
+2020-01-08 16:12:19.893 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9023"]
+2020-01-08 16:12:19.906 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-01-08 16:12:19.926 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9023 (http)
+2020-01-08 16:12:19.931 [restartedMain] INFO  cc.fyp.toy.init.Application - Started Application in 2.462 seconds (JVM running for 2.851)
+2020-01-08 16:12:28.848 [http-nio-9023-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mytoy] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-01-08 16:12:28.848 [http-nio-9023-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2020-01-08 16:12:28.864 [http-nio-9023-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
+2020-01-08 16:15:16.597 [restartedMain] INFO  cc.fyp.toy.init.Application - Starting Application on von-charlesdeMacBook-Pro.local with PID 37817 (/Users/von/data/myproject/projects/mytoy/mytoy-web/target/classes started by von in /Users/von/data/myproject/projects/mytoy/mytoy-web)
+2020-01-08 16:15:16.599 [restartedMain] INFO  cc.fyp.toy.init.Application - No active profile set, falling back to default profiles: default
+2020-01-08 16:15:16.758 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@43813d6: startup date [Wed Jan 08 16:15:16 CST 2020]; root of context hierarchy
+2020-01-08 16:15:16.816 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2020-01-08 16:15:17.835 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9023 (http)
+2020-01-08 16:15:17.845 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-01-08 16:15:17.846 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2020-01-08 16:15:17.995 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-01-08 16:15:18.000 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mytoy] - Initializing Spring embedded WebApplicationContext
+2020-01-08 16:15:18.000 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1242 ms
+2020-01-08 16:15:18.106 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2020-01-08 16:15:18.109 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-01-08 16:15:18.109 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-01-08 16:15:18.109 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-01-08 16:15:18.109 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-01-08 16:15:18.160 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService  'taskExecutor'
+2020-01-08 16:15:18.376 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@43813d6: startup date [Wed Jan 08 16:15:16 CST 2020]; root of context hierarchy
+2020-01-08 16:15:18.424 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/export/show]}" onto public void cc.fyp.bmb.controller.ExportController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:15:18.427 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/order],methods=[GET]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.order(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+2020-01-08 16:15:18.427 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/show]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:15:18.427 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/process]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.process(javax.servlet.http.HttpServletRequest,cc.fyp.toy.service.evcard.dto.QueryTask)
+2020-01-08 16:15:18.427 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/login],methods=[GET]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.login(javax.servlet.http.HttpServletRequest)
+2020-01-08 16:15:18.428 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/go]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.go(javax.servlet.http.HttpServletRequest,cc.fyp.toy.service.evcard.dto.QueryDTO)
+2020-01-08 16:15:18.428 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/cancel]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.cancel(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2020-01-08 16:15:18.431 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/getVehicleInfoList],methods=[POST]}" onto public java.lang.String cc.fyp.toy.controller.ProxyApiController.getVehicleInfoList(javax.servlet.http.HttpServletRequest,java.lang.String)
+2020-01-08 16:15:18.431 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/forlt/show]}" onto public java.lang.String cc.fyp.toy.controller.ShowController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:15:18.432 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tmlf/index]}" onto public org.springframework.web.servlet.ModelAndView cc.fyp.toy.controller.ThymelifeController.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2020-01-08 16:15:18.434 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-01-08 16:15:18.435 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:15:18.457 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:15:18.457 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:15:18.485 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:15:18.818 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-01-08 16:15:18.855 [restartedMain] INFO  o.s.w.s.server.standard.ServerEndpointExporter - Registering @ServerEndpoint class: class cc.fyp.toy.controller.WebSocket
+2020-01-08 16:15:18.863 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-01-08 16:15:18.875 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9023"]
+2020-01-08 16:15:18.882 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9023"]
+2020-01-08 16:15:18.979 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-01-08 16:15:18.998 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9023 (http)
+2020-01-08 16:15:19.002 [restartedMain] INFO  cc.fyp.toy.init.Application - Started Application in 2.582 seconds (JVM running for 2.951)
+2020-01-08 16:15:21.293 [http-nio-9023-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mytoy] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-01-08 16:15:21.293 [http-nio-9023-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2020-01-08 16:15:21.307 [http-nio-9023-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
+2020-01-08 16:16:28.237 [restartedMain] INFO  cc.fyp.toy.init.Application - Starting Application on von-charlesdeMacBook-Pro.local with PID 37833 (/Users/von/data/myproject/projects/mytoy/mytoy-web/target/classes started by von in /Users/von/data/myproject/projects/mytoy/mytoy-web)
+2020-01-08 16:16:28.238 [restartedMain] INFO  cc.fyp.toy.init.Application - No active profile set, falling back to default profiles: default
+2020-01-08 16:16:28.399 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@43813d6: startup date [Wed Jan 08 16:16:28 CST 2020]; root of context hierarchy
+2020-01-08 16:16:28.452 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2020-01-08 16:16:29.468 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9023 (http)
+2020-01-08 16:16:29.477 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-01-08 16:16:29.478 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2020-01-08 16:16:29.625 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-01-08 16:16:29.629 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mytoy] - Initializing Spring embedded WebApplicationContext
+2020-01-08 16:16:29.629 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1230 ms
+2020-01-08 16:16:29.737 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2020-01-08 16:16:29.740 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-01-08 16:16:29.740 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-01-08 16:16:29.740 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-01-08 16:16:29.740 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-01-08 16:16:29.790 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService  'taskExecutor'
+2020-01-08 16:16:29.995 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@43813d6: startup date [Wed Jan 08 16:16:28 CST 2020]; root of context hierarchy
+2020-01-08 16:16:30.044 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/export/show]}" onto public void cc.fyp.bmb.controller.ExportController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:16:30.046 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/order],methods=[GET]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.order(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+2020-01-08 16:16:30.047 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/show]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:16:30.047 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/login],methods=[GET]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.login(javax.servlet.http.HttpServletRequest)
+2020-01-08 16:16:30.047 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/cancel]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.cancel(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2020-01-08 16:16:30.047 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/go]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.go(javax.servlet.http.HttpServletRequest,cc.fyp.toy.service.evcard.dto.QueryDTO)
+2020-01-08 16:16:30.048 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/process]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.process(javax.servlet.http.HttpServletRequest,cc.fyp.toy.service.evcard.dto.QueryTask)
+2020-01-08 16:16:30.050 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/getVehicleInfoList],methods=[POST]}" onto public java.lang.String cc.fyp.toy.controller.ProxyApiController.getVehicleInfoList(javax.servlet.http.HttpServletRequest,java.lang.String)
+2020-01-08 16:16:30.050 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/forlt/show]}" onto public java.lang.String cc.fyp.toy.controller.ShowController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:16:30.051 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tmlf/index]}" onto public org.springframework.web.servlet.ModelAndView cc.fyp.toy.controller.ThymelifeController.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2020-01-08 16:16:30.053 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-01-08 16:16:30.054 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:16:30.075 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:16:30.075 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:16:30.112 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:16:30.450 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-01-08 16:16:30.485 [restartedMain] INFO  o.s.w.s.server.standard.ServerEndpointExporter - Registering @ServerEndpoint class: class cc.fyp.toy.controller.WebSocket
+2020-01-08 16:16:30.493 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-01-08 16:16:30.504 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9023"]
+2020-01-08 16:16:30.590 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9023"]
+2020-01-08 16:16:30.603 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-01-08 16:16:30.622 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9023 (http)
+2020-01-08 16:16:30.626 [restartedMain] INFO  cc.fyp.toy.init.Application - Started Application in 2.545 seconds (JVM running for 2.904)
+2020-01-08 16:16:39.433 [http-nio-9023-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mytoy] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-01-08 16:16:39.433 [http-nio-9023-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2020-01-08 16:16:39.447 [http-nio-9023-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
+2020-01-08 16:17:31.309 [restartedMain] INFO  cc.fyp.toy.init.Application - Starting Application on von-charlesdeMacBook-Pro.local with PID 37849 (/Users/von/data/myproject/projects/mytoy/mytoy-web/target/classes started by von in /Users/von/data/myproject/projects/mytoy/mytoy-web)
+2020-01-08 16:17:31.311 [restartedMain] INFO  cc.fyp.toy.init.Application - No active profile set, falling back to default profiles: default
+2020-01-08 16:17:31.458 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@43813d6: startup date [Wed Jan 08 16:17:31 CST 2020]; root of context hierarchy
+2020-01-08 16:17:31.516 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2020-01-08 16:17:32.436 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9023 (http)
+2020-01-08 16:17:32.444 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-01-08 16:17:32.445 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2020-01-08 16:17:32.579 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-01-08 16:17:32.583 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mytoy] - Initializing Spring embedded WebApplicationContext
+2020-01-08 16:17:32.583 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1125 ms
+2020-01-08 16:17:32.678 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2020-01-08 16:17:32.681 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-01-08 16:17:32.681 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-01-08 16:17:32.681 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-01-08 16:17:32.681 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-01-08 16:17:32.732 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService  'taskExecutor'
+2020-01-08 16:17:32.929 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@43813d6: startup date [Wed Jan 08 16:17:31 CST 2020]; root of context hierarchy
+2020-01-08 16:17:32.974 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/export/show]}" onto public void cc.fyp.bmb.controller.ExportController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:17:32.976 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/order],methods=[GET]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.order(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+2020-01-08 16:17:32.976 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/process]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.process(javax.servlet.http.HttpServletRequest,cc.fyp.toy.service.evcard.dto.QueryTask)
+2020-01-08 16:17:32.977 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/show]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:17:32.977 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/login],methods=[GET]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.login(javax.servlet.http.HttpServletRequest)
+2020-01-08 16:17:32.977 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/go]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.go(javax.servlet.http.HttpServletRequest,cc.fyp.toy.service.evcard.dto.QueryDTO)
+2020-01-08 16:17:32.977 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/card/cancel]}" onto public java.lang.String cc.fyp.toy.controller.EvcardController.cancel(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2020-01-08 16:17:32.979 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/getVehicleInfoList],methods=[POST]}" onto public java.lang.String cc.fyp.toy.controller.ProxyApiController.getVehicleInfoList(javax.servlet.http.HttpServletRequest,java.lang.String)
+2020-01-08 16:17:32.980 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/forlt/show]}" onto public java.lang.String cc.fyp.toy.controller.ShowController.showbase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:17:32.980 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tmlf/index]}" onto public org.springframework.web.servlet.ModelAndView cc.fyp.toy.controller.ThymelifeController.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2020-01-08 16:17:32.982 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-01-08 16:17:32.983 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-08 16:17:33.003 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:17:33.003 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:17:33.025 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-08 16:17:33.340 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-01-08 16:17:33.373 [restartedMain] INFO  o.s.w.s.server.standard.ServerEndpointExporter - Registering @ServerEndpoint class: class cc.fyp.toy.controller.WebSocket
+2020-01-08 16:17:33.380 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-01-08 16:17:33.390 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9023"]
+2020-01-08 16:17:33.397 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9023"]
+2020-01-08 16:17:33.465 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-01-08 16:17:33.484 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9023 (http)
+2020-01-08 16:17:33.487 [restartedMain] INFO  cc.fyp.toy.init.Application - Started Application in 2.331 seconds (JVM running for 2.673)
+2020-01-08 16:17:58.041 [http-nio-9023-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mytoy] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-01-08 16:17:58.041 [http-nio-9023-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2020-01-08 16:17:58.056 [http-nio-9023-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
