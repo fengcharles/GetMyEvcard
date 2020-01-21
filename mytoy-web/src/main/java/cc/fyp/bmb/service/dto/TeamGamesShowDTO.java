@@ -1,18 +1,18 @@
 package cc.fyp.bmb.service.dto;
 
-import java.util.Date;
+import lombok.Data;
+
 
 /**
  * @author von
  * @description:
  * @date 2020/1/8 15:09
  */
+@Data
 public class TeamGamesShowDTO {
 
-    private Date beginDate;
+    private String beginDate;
 
-    private String awayTeamName;
-
-    private Integer attendCount;
+    private Boolean play;
 
 }
