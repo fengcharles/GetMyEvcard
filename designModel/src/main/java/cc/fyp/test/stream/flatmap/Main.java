@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 /**
  * Flatmap 主要用在多个集合合并处理数据，用于合并流处理
+ * https://blog.csdn.net/liyantianmin/article/details/96178586
  * @author von
  * @description:
  * @date 2020/8/17 17:58
