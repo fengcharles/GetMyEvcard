@@ -31,7 +31,7 @@ public class BmbServiceImpl implements BmbService {
     public static String API_GAME_USERS = "http://api.snsports.cn/api/content/phone/GetBMTeamUserList.json";
     public static String TEAMID = "225834";
     public static String PASS_PORT = "dcwswioo1898l51tvtgzh6x5ifayct35";
-    public static String PAGE_SIZE = "1000";
+    public static String PAGE_SIZE = "10000";
 
     @Override
     public List<Players> loadAllPlayers() {
