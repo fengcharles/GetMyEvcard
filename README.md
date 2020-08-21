@@ -1,2 +1,2 @@
 # mytoy
-As repository name This is a toy
+Just like the repository name This is a toy
