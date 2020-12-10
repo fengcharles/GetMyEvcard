@@ -25,3 +25,10 @@
            3、使用spring boot 的 themlefy页面，开发抢车管理页面，主要的功能就是选择网点，选择车型，选择电量范围，选择抢车时间。开始抢车。
            4、服务端接受到任务以后，拿着最新的Token调用接口，然后抢车，并下单。
            5、抢车成功以后下单，通过钉钉的机器人，发送消息给我。
+## 界面展示
+### 抢车界面
+![1](https://github.com/fengcharles/GetMyEvcard/blob/master/images/0.png "1")
+### 结果
+![2](https://github.com/fengcharles/GetMyEvcard/blob/master/images/share1.jpg "2")
+### 钉钉通知
+![3](https://github.com/fengcharles/GetMyEvcard/blob/master/images/1.png "3")
